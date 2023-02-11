@@ -115,7 +115,7 @@ namespace EtqanArchive.BackEnd.Models
         public class ModelReference
         {
             public IEnumerable<CustomSelectListItem> Categories { get; set; }
-            public IEnumerable<FileExtensionReferenceModel> FileExtensions { get; set; }
+            //public IEnumerable<FileExtensionReferenceModel> FileExtensions { get; set; }
         }
 
         public void Create_Edit_SetReference()
@@ -130,19 +130,19 @@ namespace EtqanArchive.BackEnd.Models
                         };
                     });
 
-            References.FileExtensions = new FileExtensionModel<FileExtension>()
-                    .GetData(IsBlock: false, IsDeleted: false, IncludeReferences: "ContentType").Select(x => {
-                        return new FileExtensionReferenceModel()
-                        {
-                            FileExtensionId = x.FileExtensionId,
-                            FileExtensionName = x.FileExtensionName,
-                            ContentType = new ContentTypeReferenceModel()
-                            {
-                                ContentTypeId = x.ContentTypeId,
-                                ContentTypeName =x.ContentType.ContentTypeName,
-                            }
-                        };
-                    });
+            //References.FileExtensions = new FileExtensionModel<FileExtension>()
+            //        .GetData(IsBlock: false, IsDeleted: false, IncludeReferences: "ContentType").Select(x => {
+            //            return new FileExtensionReferenceModel()
+            //            {
+            //                FileExtensionId = x.FileExtensionId,
+            //                FileExtensionName = x.FileExtensionName,
+            //                ContentType = new ContentTypeReferenceModel()
+            //                {
+            //                    ContentTypeId = x.ContentTypeId,
+            //                    ContentTypeName =x.ContentType.ContentTypeName,
+            //                }
+            //            };
+            //        });
         }
 
     }

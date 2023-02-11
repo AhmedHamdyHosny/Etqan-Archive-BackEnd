@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EtqanArchive.DataLayer.Migrations
 {
     [DbContext(typeof(EtqanArchiveDBContext))]
-    [Migration("20230205115456_initialCreate")]
-    partial class initialCreate
+    [Migration("20230211092707_createViews")]
+    partial class createViews
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -450,7 +450,6 @@ namespace EtqanArchive.DataLayer.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("ProjectLocation")
-                        .IsRequired()
                         .HasColumnType("nvarchar(200)")
                         .HasMaxLength(200);
 
@@ -495,6 +494,9 @@ namespace EtqanArchive.DataLayer.Migrations
                     b.Property<Guid>("CreateUserId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int?>("Duration")
+                        .HasColumnType("int");
+
                     b.Property<Guid>("FileExtensionId")
                         .HasColumnType("uniqueidentifier");
 
@@ -503,8 +505,10 @@ namespace EtqanArchive.DataLayer.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("FilePath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("FileSize")
+                        .HasColumnType("float");
 
                     b.Property<bool>("IsBlock")
                         .HasColumnType("bit");

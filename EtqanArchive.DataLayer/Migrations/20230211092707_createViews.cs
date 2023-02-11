@@ -19,7 +19,7 @@ namespace EtqanArchive.DataLayer.Migrations
                 "ProjectFile.ContentAltTitle, ProjectFile.ContentDescription, ProjectFile.ContentAltDescription, ProjectFile.KeyWords, " +
                 "ProjectFile.Note, ProjectFile.ProjectId, Project.ProjectName, Project.ProjectAltName, FileExtension.ContentTypeId, " +
                 "ContentType.ContentTypeName, ContentType.ContentTypeAltName, ProjectFile.CategoryId, Category.CategoryName, Category.CategoryAltName, " +
-                "ProjectFile.FileExtensionId, FileExtension.FileExtensionName, FileExtension.FileExtensionAltName, ProjectFile.ProductionDate, " +
+                "ProjectFile.FileExtensionId, FileExtension.FileExtensionName, FileExtension.FileExtensionAltName, ProjectFile.ProductionDate, ProjectFile.FileSize, ProjectFile.Duration, " +
                 "ProjectFile.IsBlock, (CASE WHEN ProjectFile.IsBlock = 1 THEN 'true' ELSE 'false' END) AS IsBlock_str, " +
                 "ProjectFile.IsDeleted, ProjectFile.CreateUserId, ProjectFile.CreateDate, ProjectFile.ModifyUserId, ProjectFile.ModifyDate, " +
                 "CreateUser.UserFullName AS CreateUser_FullName, CreateUser.UserAltFullName AS CreateUser_FullAltName, " +

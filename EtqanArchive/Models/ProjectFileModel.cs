@@ -119,51 +119,51 @@ namespace EtqanArchive.BackEnd.Models
 
     public class ProjectFileCreateBindModel : IProjectFile
     {
-        //public Guid ProjectId { get; set; }
         public Guid FileExtensionId { get; set; }
         public Guid? CategoryId { get; set; }
         public string FileName { get; set; }
         public string FilePath { get; set; }
         public string ContentTitle { get; set; }
         public string ContentDescription { get; set; }
-        //public string FileExtensionName { get; set; }
         public string KeyWords { get; set; }
         public DateTime ProductionDate { get; set; }
-        //public virtual string Note { get; set; }
+        public virtual string Note { get; set; }
+        public double FileSize { get; set; }
+        public int? Duration { get; set; }
     }
 
     public class ProjectFileEditBindModel : IProjectFile
     {
         public Guid ProjectFileId { get; set; }
-        //public Guid ProjectId { get; set; }
         public Guid FileExtensionId { get; set; }
+        public string ContentTypeName { get; set; }
         public Guid? CategoryId { get; set; }
         public string FileName { get; set; }
         public string FilePath { get; set; }
-        //public string FileExtensionName { get; set; }
         public string ContentTitle { get; set; }
         public string ContentDescription { get; set; }
         public string KeyWords { get; set; }
         public DateTime ProductionDate { get; set; }
         public CategoryEditBindModel Category { get; set; }
-        public FileExtensionReferenceModel FileExtension { get; set; }
-        //public virtual string Note { get; set; }
+        //public FileExtensionReferenceModel FileExtension { get; set; }
+        public virtual string Note { get; set; }
+        public double FileSize { get; set; }
+        public int? Duration { get; set; }
     }
 
     public class ProjectFileEditRequestModel : IProjectFile
     {
         public Guid ProjectFileId { get; set; }
-        //public Guid ProjectId { get; set; }
         public Guid FileExtensionId { get; set; }
         public Guid? CategoryId { get; set; }
         public string FileName { get; set; }
         public string FilePath { get; set; }
-        //public string FileExtensionName { get; set; }
         public string ContentTitle { get; set; }
         public string ContentDescription { get; set; }
         public string KeyWords { get; set; }
         public DateTime ProductionDate { get; set; }
-
+        public double FileSize { get; set; }
+        public int? Duration { get; set; }
     }
 
     public class ProjectFile_Create_Edit_Model
@@ -255,6 +255,46 @@ namespace EtqanArchive.BackEnd.Models
         public IEnumerable<Guid> FileExtensionIds { get; set; }
     }
 
+    public class DirecortyPathFilesRequestModel
+    {
+        public string DirectoryPath { get; set; }
+    }
+
+    public class DirecortyPathFilesResponseModel
+    {
+        public string FileName { get; set; }
+        public string FilePath { get; set; }
+        public Guid FileExtensionId { get; set; }
+        public string ContentTypeName { get; set; }
+        public double FileSize { get; set; }
+        public int? Duration { get; set; }
+
+        public string FormattedFileSize 
+        { 
+            get
+            {
+                if(FileSize < 1)
+                {
+                    //formate in KB
+                    return $"{Math.Ceiling(FileSize * 1024)} KB";
+                }
+                else if(FileSize > 1024)
+                {
+                    //formate in GB
+                    return $"{Math.Ceiling(FileSize / 1024)} GB";
+
+                }
+                else
+                {
+                    //formate in MB
+                    return $"{Math.Ceiling(FileSize)} MB";
+                }
+            }
+        }
+    }
+
+
+    
 
 
     #region DAL

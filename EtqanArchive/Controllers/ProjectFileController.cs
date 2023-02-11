@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
-using DataLayer.Common;
 using EtqanArchive.BackEnd.Models;
+using EtqanArchive.BackEnd.Services;
 using EtqanArchive.DataLayer.TableEntity;
 using EtqanArchive.DataLayer.ViewEntity;
-using EtqanArchive.Localization.Resources;
 using GenericBackEndCore.Classes.Utilities;
 using GenericRepositoryCore.Utilities;
 using Microsoft.AspNetCore.Authorization;
@@ -11,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace EtqanArchive.BackEnd.Controllers
 {
@@ -22,10 +22,12 @@ namespace EtqanArchive.BackEnd.Controllers
         ProjectFileModel<ProjectFile>, ProjectFileModel<ProjectFileView>>
     {
         private readonly IMapper _mapper;
+        private readonly IProjectFileService _projectFileService;
 
-        public ProjectFileController(IMapper mapper)
+        public ProjectFileController(IMapper mapper, IProjectFileService projectFileService)
         {
             _mapper = mapper;
+            _projectFileService = projectFileService;
         }
 
         public override bool FuncPreGetGridView(ref GenericDataFormat options, ref JsonResponse<PaginationResult<ProjectFileGridViewModel>> response)
@@ -37,80 +39,6 @@ namespace EtqanArchive.BackEnd.Controllers
 
             return base.FuncPreGetGridView(ref options, ref response);
         }
-
-        //public override bool FuncPreCreate(ref ProjectFileCreateBindModel model, ref ProjectFile entity, ref JsonResponse<bool?> response)
-        //{
-        //    bool success = base.FuncPreCreate(ref model, ref entity, ref response);
-        //    if (success)
-        //    {
-        //        if (model.FileExtensionName == null)
-        //        {
-        //            response = new JsonResponse<bool?>(Validation.InvalidModel, false);
-        //            success = false;
-        //        }
-        //        else
-        //        {
-        //            var fileExtensionModel = new FileExtensionModel<FileExtension>();
-        //            var fileExtension = fileExtensionModel.GetData(FileExtensionName: model.FileExtensionName, IsBlock: false, IsDeleted: false).SingleOrDefault();
-
-        //            if (fileExtension == null)
-        //            {
-        //                var insertedExtension = fileExtensionModel.Insert(new FileExtension()
-        //                {
-        //                    FileExtensionId = Guid.NewGuid(),
-        //                    FileExtensionName = model.FileExtensionName,
-        //                    FileExtensionAltName = model.FileExtensionName,
-        //                    CreateDate = DateTime.Now,
-        //                    CreateUserId = Guid.Parse(User.Identity.GetUserId()),
-        //                });
-
-        //                entity.FileExtensionId = insertedExtension.FileExtensionId;
-        //            }
-        //            else
-        //            {
-        //                entity.FileExtensionId = fileExtension.FileExtensionId;
-        //            }
-        //        }
-        //    }
-        //    return success;
-        //}
-
-        //public override bool FuncPreEdit(Guid id, ref ProjectFileEditBindModel model, ref ProjectFile entity, ref JsonResponse<bool?> response)
-        //{
-        //    bool success = base.FuncPreEdit(id, ref model, ref entity, ref response);
-        //    if (success)
-        //    {
-        //        if (model.FileExtensionName == null)
-        //        {
-        //            response = new JsonResponse<bool?>(Validation.InvalidModel, false);
-        //            success = false;
-        //        }
-        //        else
-        //        {
-        //            var fileExtensionModel = new FileExtensionModel<FileExtension>();
-        //            var fileExtension = fileExtensionModel.GetData(FileExtensionName: model.FileExtensionName, IsBlock: false, IsDeleted: false).SingleOrDefault();
-
-        //            if (fileExtension == null)
-        //            {
-        //                var insertedExtension = fileExtensionModel.Insert(new FileExtension()
-        //                {
-        //                    FileExtensionId = Guid.NewGuid(),
-        //                    FileExtensionName = model.FileExtensionName,
-        //                    FileExtensionAltName = model.FileExtensionName,
-        //                    CreateDate = DateTime.Now,
-        //                    CreateUserId = Guid.Parse(User.Identity.GetUserId()),
-        //                });
-
-        //                entity.FileExtensionId = insertedExtension.FileExtensionId;
-        //            }
-        //            else
-        //            {
-        //                entity.FileExtensionId = fileExtension.FileExtensionId;
-        //            }
-        //        }
-        //    }
-        //    return success;
-        //}
 
         [AllowAnonymous]
         public override IActionResult Details([FromRoute] Guid id, [FromRoute] Guid? notificationId)
@@ -291,6 +219,13 @@ namespace EtqanArchive.BackEnd.Controllers
             };
 
             return Ok(new JsonResponse<PaginationResult<ProjectFileGridViewModel>>(response));
+        }
+
+
+        [HttpPost("GetPathFiles")]
+        public async Task<IActionResult> GetPathFiles([FromBody] DirecortyPathFilesRequestModel request)
+        {
+            return await _projectFileService.GetPathFiles(request.DirectoryPath);
         }
 
     }

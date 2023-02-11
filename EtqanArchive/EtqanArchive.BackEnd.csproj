@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\GenericDataLayer\GenericBackEndCore\GenericBackEndCore.csproj" />
-    <ProjectReference Include="..\..\..\..\..\GenericDataLayer\GenericRepositoryCore\GenericRepositoryCore.csproj" />
+    <ProjectReference Include="..\..\..\..\GenericDatalayer\GenericBackEndCore\GenericBackEndCore.csproj" />
+    <ProjectReference Include="..\..\..\..\GenericDatalayer\GenericRepositoryCore\GenericRepositoryCore.csproj" />
     <ProjectReference Include="..\EtqanArchive.DataLayer\EtqanArchive.DataLayer.csproj" />
     <ProjectReference Include="..\EtqanArchive.Identity\EtqanArchive.Identity.csproj" />
     <ProjectReference Include="..\EtqanArchive.Localization\EtqanArchive.Localization.csproj" />
