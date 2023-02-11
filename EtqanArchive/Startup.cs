@@ -2,11 +2,9 @@ using DataLayer.Security.TableEntity;
 using EtqanArchive.BackEnd.DependencyInjection;
 using EtqanArchive.DataLayer;
 using GenericBackEndCore.Classes.Utilities;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,9 +14,7 @@ using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System;
 using System.Text;
-using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
-
+using EtqanArchive.BackEnd.Services;
 
 namespace EtqanArchive
 {
@@ -44,6 +40,7 @@ namespace EtqanArchive
             #region Add Services
             services
                 .AddDBContext(Configuration)
+                .AddTransient<IProjectFileService, ProjectFileService>()
                 .AddSecurityServices();
 
             //services.AddScoped<IUserService, UserService>();

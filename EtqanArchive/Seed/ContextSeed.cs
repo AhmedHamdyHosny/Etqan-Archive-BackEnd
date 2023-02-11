@@ -131,14 +131,22 @@ namespace EtqanArchive.BackEnd.Seed
             #endregion
 
             #region ContentType
-            Guid videoContentTypeId = Guid.Parse("823F9E36-AF47-45FF-A386-526EE38D7C2D");
             Guid imageContentTypeId = Guid.Parse("EE8A314F-2DBF-4567-BD81-7A60202AADF4");
+            
 
             List<ContentType> contentTypes = new List<ContentType>()
             {
                 new ContentType()
                 {
-                    ContentTypeId = videoContentTypeId,
+                    ContentTypeId = DBEnums.ContentType.Other,
+                    ContentTypeName = "Other",
+                    ContentTypeAltName = "Other",
+                    CreateDate = DateTime.Now,
+                    CreateUserId = adminUserId,
+                },
+                new ContentType()
+                {
+                    ContentTypeId = DBEnums.ContentType.Video,
                     ContentTypeName = "فيديو",
                     ContentTypeAltName = "فيديو",
                     CreateDate = DateTime.Now,
@@ -176,14 +184,7 @@ namespace EtqanArchive.BackEnd.Seed
                     CreateDate = DateTime.Now,
                     CreateUserId = adminUserId,
                 },
-                new ContentType()
-                {
-                    ContentTypeId = Guid.Parse("0E2B9825-567D-4BF9-B85E-1AFB032D9C0E"),
-                    ContentTypeName = "Other",
-                    ContentTypeAltName = "Other",
-                    CreateDate = DateTime.Now,
-                    CreateUserId = adminUserId,
-                },
+                
             };
 
             SeedEntities(contentTypes, context, new ContentTypeComparer(), updateItems: true);
@@ -194,10 +195,19 @@ namespace EtqanArchive.BackEnd.Seed
             {
                 new FileExtension()
                 {
+                    FileExtensionId = DBEnums.FileExtension.Unknown,
+                    FileExtensionName = "unknown",
+                    FileExtensionAltName = "unknown",
+                    ContentTypeId = DBEnums.ContentType.Other,
+                    CreateDate = DateTime.Now,
+                    CreateUserId = adminUserId,
+                },
+                new FileExtension()
+                {
                     FileExtensionId = Guid.Parse("BF508A23-764D-4ECC-8F83-C0AB39B30CBA"),
                     FileExtensionName = "mp4",
                     FileExtensionAltName = "mp4",
-                    ContentTypeId = videoContentTypeId,
+                    ContentTypeId = DBEnums.ContentType.Video,
                     CreateDate = DateTime.Now,
                     CreateUserId = adminUserId,
                 },

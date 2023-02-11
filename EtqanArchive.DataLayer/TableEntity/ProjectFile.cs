@@ -7,7 +7,6 @@ namespace EtqanArchive.DataLayer.TableEntity
 {
     public interface IProjectFile
     {
-        //public Guid ProjectId { get; set; }
         public Guid? CategoryId { get; set; }
         public string FileName { get; set; }
         public string FilePath { get; set; }
@@ -16,6 +15,8 @@ namespace EtqanArchive.DataLayer.TableEntity
         public string KeyWords { get; set; }
         public DateTime ProductionDate { get; set; }
         public Guid FileExtensionId { get; set; }
+        public double FileSize { get; set; }
+        public int? Duration { get; set; }
     }
 
     [Table("ProjectFile")]
@@ -40,6 +41,9 @@ namespace EtqanArchive.DataLayer.TableEntity
         [StringLength(500)]
         public string KeyWords { get; set; }
         public DateTime ProductionDate { get; set; }
+        [Column(TypeName = "float")]
+        public double FileSize { get; set; }
+        public int? Duration { get; set; }
 
         public virtual Project Project { get; set; }
         public virtual Category Category { get; set; }

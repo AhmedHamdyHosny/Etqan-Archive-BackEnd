@@ -88,12 +88,12 @@ namespace EtqanArchive.BackEnd.Models
         public string FileExtensionName { get; set; }
     }
 
-    public class FileExtensionReferenceModel : IFileExtension
-    {
-        public Guid FileExtensionId { get; set; }
-        public string FileExtensionName { get; set; }
-        public ContentTypeReferenceModel ContentType { get; set; }
-    }
+    //public class FileExtensionReferenceModel : IFileExtension
+    //{
+    //    public Guid FileExtensionId { get; set; }
+    //    public string FileExtensionName { get; set; }
+    //    public ContentTypeReferenceModel ContentType { get; set; }
+    //}
 
 
     #region DAL

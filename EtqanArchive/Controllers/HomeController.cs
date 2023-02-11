@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace EtqanArchive.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
+    [Route("")]
     public class HomeController : ControllerBase
     {
         [HttpGet]
