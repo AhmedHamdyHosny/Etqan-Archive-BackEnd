@@ -34,6 +34,7 @@ namespace EtqanArchive.BackEnd.Controllers
             {
                 Properties = "ProjectFileId,FileName,FilePath,FileExtensionName,ProjectName,ContentTypeName,CategoryName",
             };
+
             return base.FuncPreGetGridView(ref options, ref response);
         }
 
