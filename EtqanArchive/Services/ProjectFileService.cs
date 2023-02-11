@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Classes.Common;
+﻿using Classes.Common;
 using EtqanArchive.BackEnd.Models;
 using EtqanArchive.DataLayer.TableEntity;
 using GenericBackEndCore.Classes.Utilities;
@@ -9,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace EtqanArchive.BackEnd.Services
@@ -21,24 +19,22 @@ namespace EtqanArchive.BackEnd.Services
     public class ProjectFileService : IProjectFileService
     {
         private readonly IConfiguration _configuration;
-        private readonly IMapper _mapper;
 
-        public ProjectFileService(IConfiguration configuration, IMapper mapper)
+        public ProjectFileService(IConfiguration configuration)
         {
             _configuration = configuration;
-            _mapper = mapper;
         }
 
         public async Task<IActionResult> GetPathFiles(string directoryPath)
         {
 
             string IP = _configuration["StorageServer:IP"];
-            //directoryPath = "\\\\Etqaan_store\\Archiving";
             string username = _configuration["StorageServer:NetworkUsername"];
             string password = _configuration["StorageServer:NetworkPassword"];
             IEnumerable<DirecortyPathFilesResponseModel> directoryFiles = null;
             IEnumerable<FileExtension> fileExtensions = new FileExtensionModel<FileExtension>().GetData(IsBlock: false, IsDeleted: false, IncludeReferences: "ContentType");
             //copy file to destination
+            //for test
             //using (new NetworkConnection(@"\\" + IP, new NetworkCredential(username, password, System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName)))
             //{
                 if (Directory.Exists(directoryPath))

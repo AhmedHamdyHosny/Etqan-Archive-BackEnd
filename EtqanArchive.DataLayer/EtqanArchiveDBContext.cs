@@ -37,6 +37,7 @@ namespace EtqanArchive.DataLayer
         //    }
         //}
 
+        //for test
         protected override void OnConfiguring(DbContextOptionsBuilder options) =>
         options.UseSqlServer(@"Server=.;Database=EtqanArchive;User Id=sa;Password=Sh@ms2018;");
 
