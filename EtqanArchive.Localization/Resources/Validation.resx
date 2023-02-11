@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BalanceTransferLessThanLimitedBalance" xml:space="preserve">
+    <value>Minimun transfer balance must be greater than or equal {0}</value>
+  </data>
+  <data name="BookTicketTransactionNotFound" xml:space="preserve">
+    <value>Book ticket transaction not found</value>
+  </data>
+  <data name="CalculatedBalanceNotMatchWithAvailableBalance" xml:space="preserve">
+    <value>Calculated balance not match with available balance</value>
+  </data>
+  <data name="CategoryHasNoCommision" xml:space="preserve">
+    <value>Category has no commision</value>
+  </data>
+  <data name="CategoryImageRequired" xml:space="preserve">
+    <value>Category image is required</value>
+  </data>
+  <data name="CategoryNotFound" xml:space="preserve">
+    <value>Category not found</value>
+  </data>
+  <data name="CurrentTicketStatusNotAllowCancellation" xml:space="preserve">
+    <value>Current ticket status not allow cancellation</value>
+  </data>
+  <data name="CustomerHasPendingBalanceTransfer" xml:space="preserve">
+    <value>Customer has pending transfer balance</value>
+  </data>
+  <data name="CustomerNotHavePortfolio" xml:space="preserve">
+    <value>Customer doesn't have portfolio with the specified currency</value>
+  </data>
+  <data name="DateMustBeAfterOrEqualToday" xml:space="preserve">
+    <value>Date must be after or equal today</value>
+  </data>
+  <data name="DateTimeMustBeAfterNow" xml:space="preserve">
+    <value>Datetime must be after now</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Email is required</value>
+  </data>
+  <data name="ErrorMsg_CanceledAttendedTicket" xml:space="preserve">
+    <value>Can't cancel attended ticket</value>
+  </data>
+  <data name="ErrorMsg_MaxPendingEvents" xml:space="preserve">
+    <value>You have reached to maximum pending events</value>
+  </data>
+  <data name="ErrorMsg_TicketNotAllowRefund" xml:space="preserve">
+    <value>Ticket refund not allowed</value>
+  </data>
+  <data name="EventCoverImageRequired" xml:space="preserve">
+    <value>Event cover image is required</value>
+  </data>
+  <data name="EventDateRequired" xml:space="preserve">
+    <value>Event date required</value>
+  </data>
+  <data name="EventFromDateRequired" xml:space="preserve">
+    <value>Event from date required</value>
+  </data>
+  <data name="EventGalleryRequired" xml:space="preserve">
+    <value>Event gallery is required</value>
+  </data>
+  <data name="EventHasAvailableTickets" xml:space="preserve">
+    <value>Event already has available tickets</value>
+  </data>
+  <data name="EventNoAvailableTickets" xml:space="preserve">
+    <value>No available tickets</value>
+  </data>
+  <data name="EventNotAllowWaitingList" xml:space="preserve">
+    <value>Event does not allow waiting list</value>
+  </data>
+  <data name="EventNotFound" xml:space="preserve">
+    <value>Event is not found</value>
+  </data>
+  <data name="EventNotSelected" xml:space="preserve">
+    <value>Event not selected</value>
+  </data>
+  <data name="EventTicketClassFloorPlanSectionRequired" xml:space="preserve">
+    <value>Event ticket class floor plan section required</value>
+  </data>
+  <data name="EventTicketClassFullyBooked" xml:space="preserve">
+    <value>Selected ticket class is fully booked, Try booking different class</value>
+  </data>
+  <data name="EventTicketClassMaxNoParticipantMustLessThanNoSectionSeats" xml:space="preserve">
+    <value>Event ticket class participants must be less than or equal number of floor plan section seats</value>
+  </data>
+  <data name="EventTicketClassNotFound" xml:space="preserve">
+    <value>Event ticket class not found</value>
+  </data>
+  <data name="EventTicketsMoreThanAvailable" xml:space="preserve">
+    <value>Tickets are more than available</value>
+  </data>
+  <data name="EventToDateRequired" xml:space="preserve">
+    <value>Event to date required</value>
+  </data>
+  <data name="ExpiredEvent" xml:space="preserve">
+    <value>Event is expired.</value>
+  </data>
+  <data name="ExpiredTicketRefundNotAllow" xml:space="preserve">
+    <value>Ticket event is expired. ticket not allow to refund</value>
+  </data>
+  <data name="FailedToAddToWaitingList" xml:space="preserve">
+    <value>Failed to add to waiting list</value>
+  </data>
+  <data name="FailedToRemoveFromWaitingList" xml:space="preserve">
+    <value>Failed to remove user from waiting list</value>
+  </data>
+  <data name="FieldInvalidValue" xml:space="preserve">
+    <value>Field invalid value</value>
+  </data>
+  <data name="FieldIsRequired" xml:space="preserve">
+    <value>Field is required</value>
+  </data>
+  <data name="FieldMustHaveOneValueAtLeast" xml:space="preserve">
+    <value>Field must have one value at least</value>
+  </data>
+  <data name="FiledMustBeMoreThanZero" xml:space="preserve">
+    <value>Filed number must be geater than zero</value>
+  </data>
+  <data name="FileSavingFailed" xml:space="preserve">
+    <value>File saving failed</value>
+  </data>
+  <data name="FromDateBeGreaterThanOrEqualToday" xml:space="preserve">
+    <value>From date must be greater than or equal today</value>
+  </data>
+  <data name="IncorrectDemandSeatSection" xml:space="preserve">
+    <value>Incorrect demand seat section</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Invalid Code</value>
+  </data>
+  <data name="InvalidFinancialAccounts" xml:space="preserve">
+    <value>Invalid financial accounts</value>
+  </data>
+  <data name="InvalidModel" xml:space="preserve">
+    <value>Model is not valid</value>
+  </data>
+  <data name="InvalidPaymentMethod" xml:space="preserve">
+    <value>Invalid payment method</value>
+  </data>
+  <data name="InvalidPriceOrTotalPrice" xml:space="preserve">
+    <value>Invalid price or total price</value>
+  </data>
+  <data name="InvalidSomeProperties" xml:space="preserve">
+    <value>Some properties are not valid</value>
+  </data>
+  <data name="InvalidTicketStatus" xml:space="preserve">
+    <value>Invalid ticket status</value>
+  </data>
+  <data name="InvalidTicketTemplateFileFormat" xml:space="preserve">
+    <value>Invalid ticket template file format. please upload file in pdf format</value>
+  </data>
+  <data name="InvalidUserId" xml:space="preserve">
+    <value>Invalid UserId</value>
+  </data>
+  <data name="InvoiceTransactionNotFound" xml:space="preserve">
+    <value>Invoice transaction not found</value>
+  </data>
+  <data name="MoreThanOneEventFound" xml:space="preserve">
+    <value>More than one event is found</value>
+  </data>
+  <data name="NotBookedTicketStatusNotAllowToAttend" xml:space="preserve">
+    <value>Ticket status not in booked</value>
+  </data>
+  <data name="OneOrMoreTicketsCouldNotRefund" xml:space="preserve">
+    <value>one or more tickets couldn't be refunded</value>
+  </data>
+  <data name="OperandMustMatch" xml:space="preserve">
+    <value>Operand Must Match "&lt;="  "&gt;="</value>
+  </data>
+  <data name="OperandNotNull" xml:space="preserve">
+    <value>Operand Not Null Or Empty</value>
+  </data>
+  <data name="OperandValueMustBeGreaterThanZero" xml:space="preserve">
+    <value>Operand Value Must Be Greater Than Zero</value>
+  </data>
+  <data name="OperatorNotFound" xml:space="preserve">
+    <value>Operator is Not Exist</value>
+  </data>
+  <data name="PageNumberMustBeGreaterThan0" xml:space="preserve">
+    <value>PageNumber must be greater than 0</value>
+  </data>
+  <data name="PageSizeMustBeGreaterThan0" xml:space="preserve">
+    <value>PageSize must be greater than 0</value>
+  </data>
+  <data name="PasswordNotMatch" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="RefundMultipleEventsNotAllowed" xml:space="preserve">
+    <value>Refund multiple events tickets not allowed in one process</value>
+  </data>
+  <data name="RequestDataInCorrectFormat" xml:space="preserve">
+    <value>request data is not in correct format</value>
+  </data>
+  <data name="RequestTypeRequired" xml:space="preserve">
+    <value>Request type is required</value>
+  </data>
+  <data name="ReviewNotFound" xml:space="preserve">
+    <value>Review not found</value>
+  </data>
+  <data name="SeatAlreadyBooked" xml:space="preserve">
+    <value>Selected seat already booked. please select another one</value>
+  </data>
+  <data name="SeatNotFound" xml:space="preserve">
+    <value>Seat not found</value>
+  </data>
+  <data name="SeatsFullyBooked" xml:space="preserve">
+    <value>Seats fully booked</value>
+  </data>
+  <data name="SeatsNotFound" xml:space="preserve">
+    <value>Seats not found</value>
+  </data>
+  <data name="TicketClientEmailRequired" xml:space="preserve">
+    <value>Client email required</value>
+  </data>
+  <data name="TicketClientIdentityRequired" xml:space="preserve">
+    <value>Client identity required</value>
+  </data>
+  <data name="TicketClientMobileRequired" xml:space="preserve">
+    <value>Client mobile required</value>
+  </data>
+  <data name="TicketClientNameRequired" xml:space="preserve">
+    <value>Client name required</value>
+  </data>
+  <data name="TicketClientPersonalImageRequired" xml:space="preserve">
+    <value>Client personal image required</value>
+  </data>
+  <data name="TicketCoverImageRequired" xml:space="preserve">
+    <value>Ticket cover image is required</value>
+  </data>
+  <data name="TicketNotFound" xml:space="preserve">
+    <value>Ticket not found</value>
+  </data>
+  <data name="TicketPriceMustNotBeLessThanZero" xml:space="preserve">
+    <value>Ticket price must not be less than zero</value>
+  </data>
+  <data name="TicketRefundPolicyReject" xml:space="preserve">
+    <value>Reject refund the ticket according to the refund policy</value>
+  </data>
+  <data name="TicketRefundPriceReject" xml:space="preserve">
+    <value>Reject refund the ticket because refund amount equal zero</value>
+  </data>
+  <data name="TicketSeatAlreadyBooked" xml:space="preserve">
+    <value>Ticket seat already booked</value>
+  </data>
+  <data name="TicketStatusCanceled" xml:space="preserve">
+    <value>Ticket status id canceled</value>
+  </data>
+  <data name="TicketStatusExpired" xml:space="preserve">
+    <value>Ticket status id expired</value>
+  </data>
+  <data name="TicketStatusNotBooked" xml:space="preserve">
+    <value>Ticket status is not booked</value>
+  </data>
+  <data name="TicketStatusPending" xml:space="preserve">
+    <value>Ticket status id pending</value>
+  </data>
+  <data name="TicketTemplateNotFound" xml:space="preserve">
+    <value>Ticket template not found</value>
+  </data>
+  <data name="ToDateBeGreaterThanOrEqualFromDate" xml:space="preserve">
+    <value>To date must be greater than or equal from date</value>
+  </data>
+  <data name="ToDateMustBeAfterFromDate" xml:space="preserve">
+    <value>To date must be after from date</value>
+  </data>
+  <data name="ToDateTimeMustBeAfterFromDateTime" xml:space="preserve">
+    <value>To datetime must be after from datetime</value>
+  </data>
+  <data name="TokenRequired" xml:space="preserve">
+    <value>Token is required</value>
+  </data>
+  <data name="TransactionNotApproved" xml:space="preserve">
+    <value>Transaction is not approved</value>
+  </data>
+  <data name="TransactionNotFound" xml:space="preserve">
+    <value>Transaction not found</value>
+  </data>
+  <data name="TransactionStatusPending" xml:space="preserve">
+    <value>Transaction status pending</value>
+  </data>
+  <data name="UserAlreadyOnWaitingList" xml:space="preserve">
+    <value>User is already on the waiting list for this event</value>
+  </data>
+  <data name="UserAlreadyReviewedThisEvent" xml:space="preserve">
+    <value>user already reviewed this event</value>
+  </data>
+  <data name="UserNotCustomer" xml:space="preserve">
+    <value>User not a customer</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>User not found</value>
+  </data>
+  <data name="UserNotOnWaitingList" xml:space="preserve">
+    <value>User is not on waiting list</value>
+  </data>
+</root>

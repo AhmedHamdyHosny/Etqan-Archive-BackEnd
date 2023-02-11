@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessDeny" xml:space="preserve">
+    <value>Access Deny</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="AlertActiveErrorMessage" xml:space="preserve">
+    <value>item(s) failed to be active, please check your data and try again</value>
+  </data>
+  <data name="AlertActiveInfoMessage" xml:space="preserve">
+    <value>item(s) has been activated</value>
+  </data>
+  <data name="AlertActiveSuccessMessage" xml:space="preserve">
+    <value>item(s) has been activated</value>
+  </data>
+  <data name="AlertActiveWarningMessage" xml:space="preserve">
+    <value>item(s) will be active</value>
+  </data>
+  <data name="AlertAddErrorMessage" xml:space="preserve">
+    <value>item(s) failed to be added, please check your data and try again</value>
+  </data>
+  <data name="AlertAddInfoMessage" xml:space="preserve">
+    <value>item(s) has been added</value>
+  </data>
+  <data name="AlertAddSuccessMessage" xml:space="preserve">
+    <value>item(s) has been added</value>
+  </data>
+  <data name="AlertAddWarningMessage" xml:space="preserve">
+    <value>item(s) will be add</value>
+  </data>
+  <data name="AlertDeactiveErrorMessage" xml:space="preserve">
+    <value>item(s) failed to be deactive, please check your data and try again</value>
+  </data>
+  <data name="AlertDeactiveInfoMessage" xml:space="preserve">
+    <value>item(s) has been deactivated</value>
+  </data>
+  <data name="AlertDeactiveSuccessMessage" xml:space="preserve">
+    <value>item(s) has been deatctivated</value>
+  </data>
+  <data name="AlertDeactiveWarningMessage" xml:space="preserve">
+    <value>item(s) will be deactive</value>
+  </data>
+  <data name="AlertDeleteErrorMessage" xml:space="preserve">
+    <value>item(s) failed to be delete, please check your data and try again</value>
+  </data>
+  <data name="AlertDeleteForeverErrorMessage" xml:space="preserve">
+    <value>item(s) failed to be delete forever, please check your data and try again</value>
+  </data>
+  <data name="AlertDeleteForeverInfoMessage" xml:space="preserve">
+    <value>item(s) has been deleted forever</value>
+  </data>
+  <data name="AlertDeleteForeverSuccessMessage" xml:space="preserve">
+    <value>item(s) has been deleted forever</value>
+  </data>
+  <data name="AlertDeleteForeverWarningMessage" xml:space="preserve">
+    <value>item(s) will be delete forever</value>
+  </data>
+  <data name="AlertDeleteInfoMessage" xml:space="preserve">
+    <value>item(s) has been deleted</value>
+  </data>
+  <data name="AlertDeleteSuccessMessage" xml:space="preserve">
+    <value>item(s) has been deleted</value>
+  </data>
+  <data name="AlertDeleteWarningMessage" xml:space="preserve">
+    <value>item(s) will be delete</value>
+  </data>
+  <data name="AlertEditErrorMessage" xml:space="preserve">
+    <value>item(s) failed to be update, please check your data and try again</value>
+  </data>
+  <data name="AlertEditInfoMessage" xml:space="preserve">
+    <value>item(s) has been updated</value>
+  </data>
+  <data name="AlertEditSuccessMessage" xml:space="preserve">
+    <value>item(s) has been updated</value>
+  </data>
+  <data name="AlertEditWarningMessage" xml:space="preserve">
+    <value>item(s) will be update</value>
+  </data>
+  <data name="AlertError" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="AlertExportErrorMessage" xml:space="preserve">
+    <value>item(s) failed to be export, please try again</value>
+  </data>
+  <data name="AlertExportInfoMessage" xml:space="preserve">
+    <value>item(s) has been exported</value>
+  </data>
+  <data name="AlertExportSuccessMessage" xml:space="preserve">
+    <value>item(s) has been exported</value>
+  </data>
+  <data name="AlertExportWarningMessage" xml:space="preserve">
+    <value>item(s) will be export</value>
+  </data>
+  <data name="AlertImportErrorMessage" xml:space="preserve">
+    <value>item(s) failed to be import, please check your data and try again</value>
+  </data>
+  <data name="AlertImportInfoMessage" xml:space="preserve">
+    <value>item(s) has been imported</value>
+  </data>
+  <data name="AlertImportSuccessMessage" xml:space="preserve">
+    <value>item(s) has been imported</value>
+  </data>
+  <data name="AlertImportWarningMessage" xml:space="preserve">
+    <value>item(s) will be import</value>
+  </data>
+  <data name="AlertInfo" xml:space="preserve">
+    <value>Info!</value>
+  </data>
+  <data name="AlertRestoreErrorMessage" xml:space="preserve">
+    <value>item(s) failed to be restore, please check your data and try again</value>
+  </data>
+  <data name="AlertRestoreInfoMessage" xml:space="preserve">
+    <value>item(s) has been restored</value>
+  </data>
+  <data name="AlertRestoreSuccessMessage" xml:space="preserve">
+    <value>item(s) has been restored</value>
+  </data>
+  <data name="AlertRestoreWarningMessage" xml:space="preserve">
+    <value>item(s) will be restore</value>
+  </data>
+  <data name="AlertSuccess" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="AlertWarning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Block" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="BlockConfirmDialogBody" xml:space="preserve">
+    <value>Are you sure to Block selected item(s)?</value>
+  </data>
+  <data name="BlockConfirmDialogHeader" xml:space="preserve">
+    <value>Block Confirm</value>
+  </data>
+  <data name="BlockedViewModelContent" xml:space="preserve">
+    <value>Access deny because the model has been blocked.</value>
+  </data>
+  <data name="BlockedViewModelMsg" xml:space="preserve">
+    <value>Blocked Model</value>
+  </data>
+  <data name="BlockNotification" xml:space="preserve">
+    <value>Block Notification</value>
+  </data>
+  <data name="ButtonAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ButtonApprove" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="ButtonAssign" xml:space="preserve">
+    <value>Assign</value>
+  </data>
+  <data name="ButtonBlock" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ButtonClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ButtonComplete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="ButtonCompleteReport" xml:space="preserve">
+    <value>Report (Complete)</value>
+  </data>
+  <data name="ButtonDeactive" xml:space="preserve">
+    <value>De-active</value>
+  </data>
+  <data name="ButtonDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ButtonDetails" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="ButtonEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="ButtonFinish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="ButtonHistory" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="ButtonNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="ButtonOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="ButtonPrevious" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="ButtonPreviousShortCut" xml:space="preserve">
+    <value>Prev</value>
+  </data>
+  <data name="ButtonReject" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="ButtonReport" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="ButtonSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ButtonSaveAndClose" xml:space="preserve">
+    <value>Save and Close</value>
+  </data>
+  <data name="ButtonSend" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="ButtonSubmit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="ConfirmSaveContent" xml:space="preserve">
+    <value>Do you want to save?</value>
+  </data>
+  <data name="ConfirmSaveTitle" xml:space="preserve">
+    <value>Confirm the save</value>
+  </data>
+  <data name="ConflictDataErrorMessage" xml:space="preserve">
+    <value>something went wrong. please try again later</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CreateDate" xml:space="preserve">
+    <value>Create Date</value>
+  </data>
+  <data name="CreateDateTime" xml:space="preserve">
+    <value>Create on</value>
+  </data>
+  <data name="CreateExistDeliveryNoteErrorMsgContent" xml:space="preserve">
+    <value>Delivery request has already delivery note. can not create delivery note</value>
+  </data>
+  <data name="CreateUser" xml:space="preserve">
+    <value>Create User</value>
+  </data>
+  <data name="CreateUserFullNameEn" xml:space="preserve">
+    <value>Create by</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="CustomerNotFound" xml:space="preserve">
+    <value>Customer not found</value>
+  </data>
+  <data name="DeactivateConfirmActionButton" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="DeactivateConfirmCloseButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="DeactivateConfirmDialogBody" xml:space="preserve">
+    <value>Are you sure to deactivate selected item(s)?</value>
+  </data>
+  <data name="DeactivateConfirmDialogHeader" xml:space="preserve">
+    <value>Deactivate Confirm</value>
+  </data>
+  <data name="DeleteConfirmActionButton" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="DeleteConfirmCloseButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="DeleteConfirmDialogBody" xml:space="preserve">
+    <value>Are you sure to delete selected item(s)?</value>
+  </data>
+  <data name="DeleteConfirmDialogHeader" xml:space="preserve">
+    <value>Delete Confirm</value>
+  </data>
+  <data name="DeleteSavedItemErrorMsg" xml:space="preserve">
+    <value>Error: you can not delete saved item</value>
+  </data>
+  <data name="DeliveryNoteItemHasNoSerialError" xml:space="preserve">
+    <value>Delivery Note item has no serila. please review your data</value>
+  </data>
+  <data name="Direct" xml:space="preserve">
+    <value>Direct</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="DownloadFiles" xml:space="preserve">
+    <value>Download Files</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmptyFileErrorMessage" xml:space="preserve">
+    <value>The File Is Empty</value>
+  </data>
+  <data name="ErrorMsg_FileNotFound" xml:space="preserve">
+    <value>File not found</value>
+  </data>
+  <data name="ErrorMsg_InvaildParameters" xml:space="preserve">
+    <value>Invaild parameters</value>
+  </data>
+  <data name="ErrorMsg_ItemNotFound" xml:space="preserve">
+    <value>Item(s) not found</value>
+  </data>
+  <data name="ErrorMsg_SaveImageFailed" xml:space="preserve">
+    <value>Save image failed</value>
+  </data>
+  <data name="ErrorMsg_UpdateFailed" xml:space="preserve">
+    <value>Update failed</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>False</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="FileSavedFailed" xml:space="preserve">
+    <value>File saved failed</value>
+  </data>
+  <data name="FilesHaveBeenUploaded" xml:space="preserve">
+    <value>Files Have Been Uploaded</value>
+  </data>
+  <data name="FileUploadedFailed" xml:space="preserve">
+    <value>File Uploaded Failed</value>
+  </data>
+  <data name="FileUploadedsuccessfully" xml:space="preserve">
+    <value>File Uploaded successfully</value>
+  </data>
+  <data name="ForgetPassword" xml:space="preserve">
+    <value>Forgot Password?</value>
+  </data>
+  <data name="FromCreateDate" xml:space="preserve">
+    <value>From Create Date</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>From Date</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportSuccessMessage" xml:space="preserve">
+    <value>(#itemCount) items imported successfully</value>
+  </data>
+  <data name="ImportToFillData" xml:space="preserve">
+    <value>Import To Fill Data</value>
+  </data>
+  <data name="ImportToFind" xml:space="preserve">
+    <value>Import To Find</value>
+  </data>
+  <data name="ImportToReplace" xml:space="preserve">
+    <value>Import To Replace</value>
+  </data>
+  <data name="ImportToUpdate" xml:space="preserve">
+    <value>Import To Update</value>
+  </data>
+  <data name="ImportUpdateFile" xml:space="preserve">
+    <value>Import Update File</value>
+  </data>
+  <data name="InvalidId" xml:space="preserve">
+    <value>Invalid id</value>
+  </data>
+  <data name="IsBlock" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="IsCorrect" xml:space="preserve">
+    <value>Correct</value>
+  </data>
+  <data name="IsDefault" xml:space="preserve">
+    <value>Is Default</value>
+  </data>
+  <data name="ItemsCount" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="ItemsUpdatedSuccessMessage" xml:space="preserve">
+    <value>Item(s) updated successfully</value>
+  </data>
+  <data name="LoadingMessage" xml:space="preserve">
+    <value>loading please wait....</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="ModifyDateTime" xml:space="preserve">
+    <value>Modify on</value>
+  </data>
+  <data name="ModifyUser" xml:space="preserve">
+    <value>Modify User</value>
+  </data>
+  <data name="ModifyUserFullNameEn" xml:space="preserve">
+    <value>Modify by </value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoDataMatched" xml:space="preserve">
+    <value>No Data Matched</value>
+  </data>
+  <data name="NoFileHasBeenUploaded" xml:space="preserve">
+    <value>No File Has Been Uploaded</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="NotExistViewModelContent" xml:space="preserve">
+    <value>Access deny because item is not exist.</value>
+  </data>
+  <data name="NotExistViewModelMsg" xml:space="preserve">
+    <value>Item Not Exist</value>
+  </data>
+  <data name="NullFileErrorMessage" xml:space="preserve">
+    <value>The File Is Null</value>
+  </data>
+  <data name="OtherNote" xml:space="preserve">
+    <value>Other Note</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PrintPreview" xml:space="preserve">
+    <value>Print Preview</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="QuickCreate" xml:space="preserve">
+    <value>Quick Create</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="SaveImageSuccessfully" xml:space="preserve">
+    <value>Image saved successfully</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>---- All ----</value>
+  </data>
+  <data name="SelectItem" xml:space="preserve">
+    <value>---- Select ----</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Sign out</value>
+  </data>
+  <data name="SignUpWithEmail" xml:space="preserve">
+    <value>Sign Up With Email</value>
+  </data>
+  <data name="SingIn" xml:space="preserve">
+    <value>SIGN IN</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ToCreateDate" xml:space="preserve">
+    <value>To Create Date</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>To Date</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="TypeNotExist" xml:space="preserve">
+    <value>This type isn't exist</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="UnauthorizedContent" xml:space="preserve">
+    <value>You have attempted to access a system process for which you are not authorized.</value>
+  </data>
+  <data name="UnauthorizedMsg" xml:space="preserve">
+    <value>Unauthorized!</value>
+  </data>
+  <data name="UnAuthourizedViewModelContent" xml:space="preserve">
+    <value>You are not authorized to access or view the model in current status.</value>
+  </data>
+  <data name="UnAuthourizedViewModelMsg" xml:space="preserve">
+    <value>Unauthorized!</value>
+  </data>
+  <data name="UntilDate" xml:space="preserve">
+    <value>Until Date</value>
+  </data>
+  <data name="UpgradeViewModelContent" xml:space="preserve">
+    <value>Access deny because the model has been Upgraded to (#status).</value>
+  </data>
+  <data name="UpgradeViewModelMsg" xml:space="preserve">
+    <value>Model Upgraded</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>Upload File</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Wizard" xml:space="preserve">
+    <value>Wizard</value>
+  </data>
+</root>

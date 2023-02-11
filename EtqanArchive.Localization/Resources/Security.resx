@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AvaialbleBalanceTransfered" xml:space="preserve">
+    <value>Your available balance has been transfered to your financial account</value>
+  </data>
+  <data name="BalanceTransferComplete" xml:space="preserve">
+    <value>Balance transfer complete</value>
+  </data>
+  <data name="BlockUserDenied" xml:space="preserve">
+    <value>Block user denied</value>
+  </data>
+  <data name="ConfirmationEmailSentFailed" xml:space="preserve">
+    <value>Confirmation email sent failed</value>
+  </data>
+  <data name="ConfirmationEmailSentSuccessfully" xml:space="preserve">
+    <value>Confirmation Email sent successfully</value>
+  </data>
+  <data name="DeleteUserDenied" xml:space="preserve">
+    <value>Delete user denied</value>
+  </data>
+  <data name="EmailConfirmedSuccessMessage" xml:space="preserve">
+    <value>Email Confirmed Successfully</value>
+  </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>Email not confirmed</value>
+  </data>
+  <data name="EmailSendFailed" xml:space="preserve">
+    <value>Failed to send email</value>
+  </data>
+  <data name="EmailSentSuccessfully" xml:space="preserve">
+    <value>Email sent successfully</value>
+  </data>
+  <data name="ErrorMsg_InvalidPasswordLength" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="ErrorMsg_MaxNoCustomerEmployeeUsers" xml:space="preserve">
+    <value>You have created the maximum number of employee users</value>
+  </data>
+  <data name="ErrorMsg_UserNotFound" xml:space="preserve">
+    <value>User not found</value>
+  </data>
+  <data name="ExternalLoginProviderRemoteError" xml:space="preserve">
+    <value>External login provider remote error</value>
+  </data>
+  <data name="FailedToDeleteToken" xml:space="preserve">
+    <value>Failed to delete token</value>
+  </data>
+  <data name="FailedToSavePassowrdToken" xml:space="preserve">
+    <value>Failed to save passowrd token</value>
+  </data>
+  <data name="FailedToSaveToken" xml:space="preserve">
+    <value>Failed to save token</value>
+  </data>
+  <data name="IncorrectUsernameOrPassword" xml:space="preserve">
+    <value>Incorrect username or password</value>
+  </data>
+  <data name="LoadingExternalLoginInformationFailed" xml:space="preserve">
+    <value>Loading external login information failed</value>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Invalid login attempt</value>
+  </data>
+  <data name="OTPEmailSentFailed" xml:space="preserve">
+    <value>Send OTP Email Failed</value>
+  </data>
+  <data name="OTPEmailSentSuccessfully" xml:space="preserve">
+    <value>OTP Email sent successfully</value>
+  </data>
+  <data name="PasswordChangedSuccessfully" xml:space="preserve">
+    <value>Password changed successfully</value>
+  </data>
+  <data name="PasswordNotMatch" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="PasswordResetFailed" xml:space="preserve">
+    <value>Failed to reset password</value>
+  </data>
+  <data name="PasswordResetSuccessfully" xml:space="preserve">
+    <value>Password has been reset successfully!</value>
+  </data>
+  <data name="PaymentProcessException" xml:space="preserve">
+    <value>An error occurred during payment. please contact customer service</value>
+  </data>
+  <data name="ResetPasswordEmailSentFailed" xml:space="preserve">
+    <value>Reset password email sent failed</value>
+  </data>
+  <data name="ResetPasswordEmailSentSuccessfully" xml:space="preserve">
+    <value>Reset password email sent successfully</value>
+  </data>
+  <data name="TokenAlreadyExists" xml:space="preserve">
+    <value>Token aready exists</value>
+  </data>
+  <data name="TokenDeletedSuccessfully" xml:space="preserve">
+    <value>Token deleted successfully</value>
+  </data>
+  <data name="TokenDoesNotExist" xml:space="preserve">
+    <value>Token does not exist</value>
+  </data>
+  <data name="TokenExpired" xml:space="preserve">
+    <value>Token is already expired</value>
+  </data>
+  <data name="UserAccountLockedOut" xml:space="preserve">
+    <value>User account locked out.</value>
+  </data>
+  <data name="UserCreatedFailed" xml:space="preserve">
+    <value>User created failed</value>
+  </data>
+  <data name="UserCreatedSuccessfully" xml:space="preserve">
+    <value>User created successfully</value>
+  </data>
+  <data name="UserLoginDenied" xml:space="preserve">
+    <value>User login denied</value>
+  </data>
+  <data name="UserNotAuthorized" xml:space="preserve">
+    <value>User is not authorized</value>
+  </data>
+  <data name="UserRegisterCompletedSuccessfully" xml:space="preserve">
+    <value>User register completed successfully</value>
+  </data>
+  <data name="UserUpdatedSuccessfully" xml:space="preserve">
+    <value>User updated successfully</value>
+  </data>
+</root>

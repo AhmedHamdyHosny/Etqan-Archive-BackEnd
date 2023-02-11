@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20230130133436_initialCreate.cs" />
+    <Compile Remove="Migrations\20230130133436_initialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20230130135121_createViews.cs" />
+    <Compile Remove="Migrations\20230130135121_createViews.Designer.cs" />
+    <Compile Remove="Migrations\20230131075536_initialCreate.cs" />
+    <Compile Remove="Migrations\20230131075536_initialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20230131080009_createViews.cs" />
+    <Compile Remove="Migrations\20230131080009_createViews.Designer.cs" />
+    <Compile Remove="Migrations\20230131101304_initialCreate.cs" />
+    <Compile Remove="Migrations\20230131101304_initialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20230131101730_createViews.cs" />
+    <Compile Remove="Migrations\20230131101730_createViews.Designer.cs" />
+    <Compile Remove="Migrations\20230205105015_updateEntities.cs" />
+    <Compile Remove="Migrations\20230205105015_updateEntities.Designer.cs" />
+    <Compile Remove="Migrations\20230205105110_updateViews.cs" />
+    <Compile Remove="Migrations\20230205105110_updateViews.Designer.cs" />
+    <Compile Remove="Migrations\20230205105516_updateEntities.cs" />
+    <Compile Remove="Migrations\20230205105516_updateEntities.Designer.cs" />
+    <Compile Remove="Migrations\20230205110030_updateEntities.cs" />
+    <Compile Remove="Migrations\20230205110030_updateEntities.Designer.cs" />
+    <Compile Remove="Migrations\20230205110306_initialCreate.cs" />
+    <Compile Remove="Migrations\20230205110306_initialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20230205110613_initialCreate.cs" />
+    <Compile Remove="Migrations\20230205110613_initialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20230205113947_initialCreate.cs" />
+    <Compile Remove="Migrations\20230205113947_initialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20230205114204_createViews.cs" />
+    <Compile Remove="Migrations\20230205114204_createViews.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.29" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.29" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.29">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.29" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.29">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.29" />
+  </ItemGroup>
+
+</Project>

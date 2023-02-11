@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddTicketTransactionFailed" xml:space="preserve">
+    <value>Add ticket transaction failed</value>
+  </data>
+  <data name="AlreadyHaveFinancialAccountWithSamePaymentMethod" xml:space="preserve">
+    <value>You already have a financial account with the same payment method</value>
+  </data>
+  <data name="AlreadyHavePortfolioWithSameCurrency" xml:space="preserve">
+    <value>You already have a portfolio with the same currency</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="CannotDeleteBookedTicket" xml:space="preserve">
+    <value>Cannot delete a booked ticket</value>
+  </data>
+  <data name="CannotDeleteDefaultPortfolio" xml:space="preserve">
+    <value>Cannot delete default portfolio</value>
+  </data>
+  <data name="CategoryNotFound" xml:space="preserve">
+    <value>Category not found</value>
+  </data>
+  <data name="ChangedStatusFailed" xml:space="preserve">
+    <value>Change event status failed</value>
+  </data>
+  <data name="ChangedStatusSuccessfully" xml:space="preserve">
+    <value>Changed  status successfully</value>
+  </data>
+  <data name="CouldNotUpdatePortfolio" xml:space="preserve">
+    <value>Couldn't update portfolio</value>
+  </data>
+  <data name="CustomerFollowingFailed" xml:space="preserve">
+    <value>Customer following failed</value>
+  </data>
+  <data name="CustomerNotFound" xml:space="preserve">
+    <value>Customer not found</value>
+  </data>
+  <data name="CustomerUnfollowingFailed" xml:space="preserve">
+    <value>Customer unfollowing failed</value>
+  </data>
+  <data name="EventAlreadyApproved" xml:space="preserve">
+    <value>Event already approved</value>
+  </data>
+  <data name="EventApproved" xml:space="preserve">
+    <value>Your event has been approved</value>
+  </data>
+  <data name="EventApprovedSuccessfully" xml:space="preserve">
+    <value>Event approved successfully</value>
+  </data>
+  <data name="EventChangeStatusFailed" xml:space="preserve">
+    <value>Change event status failed</value>
+  </data>
+  <data name="EventChangeStatusSuccessfully" xml:space="preserve">
+    <value>Event Changed status successfully</value>
+  </data>
+  <data name="EventEditNotAllow" xml:space="preserve">
+    <value>Event current status not allow to edit</value>
+  </data>
+  <data name="EventHasSameStatus" xml:space="preserve">
+    <value>Event has the same status</value>
+  </data>
+  <data name="EventMediaNotFound" xml:space="preserve">
+    <value>Event media not found</value>
+  </data>
+  <data name="EventNotFound" xml:space="preserve">
+    <value>Event not found</value>
+  </data>
+  <data name="EventOpenForBooking" xml:space="preserve">
+    <value>Your event is open for booking now</value>
+  </data>
+  <data name="EventsNotFound" xml:space="preserve">
+    <value>Events not found</value>
+  </data>
+  <data name="FailedToActivateSeat" xml:space="preserve">
+    <value>Failed to activate seat</value>
+  </data>
+  <data name="FailedToDeactivateSeat" xml:space="preserve">
+    <value>Failed to deactivate seat</value>
+  </data>
+  <data name="FailedToUpdatePortfolio" xml:space="preserve">
+    <value>Failed to update portfolio</value>
+  </data>
+  <data name="FavoriteCategoryAddCategoryFailed" xml:space="preserve">
+    <value>Add category to user favorites failed</value>
+  </data>
+  <data name="FavoriteCategoryRemoveCategoryFailed" xml:space="preserve">
+    <value>Remove category from user favorites failed</value>
+  </data>
+  <data name="FloorPlanNotFound" xml:space="preserve">
+    <value>Floor plan is not found</value>
+  </data>
+  <data name="HomeEventSection_Favorite" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="HomeEventSection_FollowingCustomer" xml:space="preserve">
+    <value>Following customer</value>
+  </data>
+  <data name="HomeEventSection_Free" xml:space="preserve">
+    <value>Free</value>
+  </data>
+  <data name="HomeEventSection_NearestEvent" xml:space="preserve">
+    <value>Nearest events</value>
+  </data>
+  <data name="HomeEventSection_Popular" xml:space="preserve">
+    <value>Popular</value>
+  </data>
+  <data name="HomeEventSection_Recommend" xml:space="preserve">
+    <value>Recommend</value>
+  </data>
+  <data name="InvalidFilePath" xml:space="preserve">
+    <value>Invalid file path</value>
+  </data>
+  <data name="InvalidImageContentType" xml:space="preserve">
+    <value>Invalid image content type</value>
+  </data>
+  <data name="InvalidImagePath" xml:space="preserve">
+    <value>Invalid image path</value>
+  </data>
+  <data name="InvalidMediaContentType" xml:space="preserve">
+    <value>Invalid media content type</value>
+  </data>
+  <data name="InvalidMediaPath" xml:space="preserve">
+    <value>Invalid media path</value>
+  </data>
+  <data name="MessageHasInvalidCharacters" xml:space="preserve">
+    <value>Message has invalid characters</value>
+  </data>
+  <data name="MessageHasSameStatus" xml:space="preserve">
+    <value>Message has the same status</value>
+  </data>
+  <data name="MessageNotFound" xml:space="preserve">
+    <value>Message not Found</value>
+  </data>
+  <data name="MustHaveOneFinancialAccount" xml:space="preserve">
+    <value>You must have at least one financial account</value>
+  </data>
+  <data name="NewTicketsAvailable" xml:space="preserve">
+    <value>New tickets available</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="PortfolioAlreadyDefault" xml:space="preserve">
+    <value>Portfolio is already set as default</value>
+  </data>
+  <data name="PortfolioBlocked" xml:space="preserve">
+    <value>Portfolio is blocked</value>
+  </data>
+  <data name="PortfolioNotFound" xml:space="preserve">
+    <value>Portfolio not found</value>
+  </data>
+  <data name="PortfolioUpdateFailed" xml:space="preserve">
+    <value>Portfolio update failed</value>
+  </data>
+  <data name="Reserved" xml:space="preserve">
+    <value>Reserved</value>
+  </data>
+  <data name="SeatAlreadyActivated" xml:space="preserve">
+    <value>Seat is already activated</value>
+  </data>
+  <data name="SeatAlreadyDeactivated" xml:space="preserve">
+    <value>Seat is already deactivated</value>
+  </data>
+  <data name="SeatNotFound" xml:space="preserve">
+    <value>Seat not found</value>
+  </data>
+  <data name="TicketChangeStatusFailed" xml:space="preserve">
+    <value>Ticket change status failed</value>
+  </data>
+  <data name="TicketChangeStatusSuccessfully" xml:space="preserve">
+    <value>Ticket change status successfully</value>
+  </data>
+  <data name="TicketClassNotFound" xml:space="preserve">
+    <value>Ticket class not found</value>
+  </data>
+  <data name="TicketInsertFailed" xml:space="preserve">
+    <value>Ticket insert failed</value>
+  </data>
+  <data name="TicketNotFound" xml:space="preserve">
+    <value>Ticket not found</value>
+  </data>
+  <data name="TicketsNotFound" xml:space="preserve">
+    <value>Tickets not found</value>
+  </data>
+  <data name="TicketsUpdateFailed" xml:space="preserve">
+    <value>Tickets update failed</value>
+  </data>
+  <data name="TransactionChangeStatusFailed" xml:space="preserve">
+    <value>Transaction change status failed</value>
+  </data>
+  <data name="TransactionInsertFailed" xml:space="preserve">
+    <value>Transaction insert failed</value>
+  </data>
+  <data name="TransactionsUpdateFailed" xml:space="preserve">
+    <value>Transactions update failed</value>
+  </data>
+  <data name="UpdateCustomerPortfolioFailed" xml:space="preserve">
+    <value>Update customer portfolio failed</value>
+  </data>
+</root>
