@@ -290,7 +290,6 @@ namespace EtqanArchive.BackEnd.Models
         public string ContentTypeName { get; set; }
         public double FileSize { get; set; }
         public int? Duration { get; set; }
-
         public string FormattedFileSize 
         { 
             get
@@ -311,6 +310,21 @@ namespace EtqanArchive.BackEnd.Models
                     //formate in MB
                     return $"{Math.Ceiling(FileSize)} MB";
                 }
+            }
+        }
+        public string FormattedDuration 
+        { 
+            get
+            {
+                if(Duration != null && Duration > 0)
+                {
+                    TimeSpan t = TimeSpan.FromSeconds((double)Duration);
+                    return string.Format("{0:D2}:{1:D2}:{2:D2}",
+                                    t.Hours,
+                                    t.Minutes,
+                                    t.Seconds);
+                }
+                return null;
             }
         }
     }
