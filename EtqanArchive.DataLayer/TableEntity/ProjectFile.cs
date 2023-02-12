@@ -13,7 +13,7 @@ namespace EtqanArchive.DataLayer.TableEntity
         public string ContentTitle { get; set; }
         public string ContentDescription { get; set; }
         public string KeyWords { get; set; }
-        public DateTime ProductionDate { get; set; }
+        public DateTime? ProductionDate { get; set; }
         public Guid FileExtensionId { get; set; }
         public double FileSize { get; set; }
         public int? Duration { get; set; }
@@ -40,7 +40,7 @@ namespace EtqanArchive.DataLayer.TableEntity
         public string ContentAltDescription { get; set; }
         [StringLength(500)]
         public string KeyWords { get; set; }
-        public DateTime ProductionDate { get; set; }
+        public DateTime? ProductionDate { get; set; }
         [Column(TypeName = "float")]
         public double FileSize { get; set; }
         public int? Duration { get; set; }

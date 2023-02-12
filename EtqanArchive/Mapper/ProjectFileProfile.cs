@@ -11,7 +11,9 @@ namespace EtqanArchive.BackEnd.Mapper
         {
             CreateMap<ProjectFileCreateBindModel, ProjectFile>();
             CreateMap<ProjectFileEditBindModel, ProjectFile>();
-            CreateMap<ProjectFile, ProjectFileEditBindModel>();
+            CreateMap<ProjectFile, ProjectFileEditBindModel>()
+                .ForMember(d => d.ContentTypeName, o => o.MapFrom(src => src.FileExtension.ContentType.ContentTypeName));
+
             CreateMap<ProjectFileEditRequestModel, ProjectFile>();
             CreateMap<ProjectFile, ProjectFileEditRequestModel>();
             CreateMap<ProjectFileView, ProjectFileViewModel>();

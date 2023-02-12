@@ -42,7 +42,7 @@ namespace EtqanArchive.BackEnd.Services
                     List<string> files = GetDirectoryFiles(directoryPath);
                     directoryFiles = files.Select(path => new FileInfo(path)).Select(fileInfo =>
                     {
-                        var fileExtension = getFileExtensionId(fileExtensions, fileInfo.Extension);
+                        var fileExtension = getFileExtensionId(fileExtensions, fileInfo.Extension.Remove(0,1));
                         var model = new DirecortyPathFilesResponseModel()
                         {
                             FilePath = fileInfo.FullName,

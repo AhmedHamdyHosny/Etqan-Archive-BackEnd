@@ -280,26 +280,6 @@ namespace EtqanArchive.BackEnd.Seed
                     CreateUserId = adminUserId,
                     CreateDate = DateTime.Now,
                 },
-
-                new ProjectFile()
-                {
-                    ProjectFileId = Guid.Parse("0E8C94A2-A492-43EA-AFDD-B7F0B2A4CF0B"),
-                    ProjectId = Guid.Parse("26B424F2-957B-41F4-95CD-D45D4E266FD2"),
-                    CategoryId = Guid.Parse("68E419B7-0D9B-4D93-989C-609F9A17C428"),
-                    //ContentTypeId = Guid.Parse("EE8A314F-2DBF-4567-BD81-7A60202AADF4"),
-                    FileExtensionId = Guid.Parse("9DDA90F2-E7A2-4B7D-AC90-DD2273B39402"),
-                    ContentTitle = "منظر خارجى كامل لفندق الساعة",
-                    ContentAltTitle = "منظر خارجى كامل لفندق الساعة",
-                    ContentDescription = "تفاصيل منظر خارجى كامل لفندق الساعة",
-                    ContentAltDescription  = "تفاصيل منظر خارجى كامل لفندق الساعة",
-                    KeyWords = "png,image,picture",
-                    FileName = "1.png",
-                    FilePath = "C:\\Users\\Ahmed Shams\\Pictures\\Screenshots\\1.png",
-                    Note = "ملاحظات",
-                    ProductionDate = DateTime.Now,
-                    CreateUserId = adminUserId,
-                    CreateDate = DateTime.Now,
-                },
             };
             SeedEntities(projectFiles, context, new ProjectFileComparer());
             #endregion
