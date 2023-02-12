@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using MediaInfo;
+using Microsoft.Extensions.Logging;
 
 namespace EtqanArchive.BackEnd.Services
 {
@@ -19,10 +21,12 @@ namespace EtqanArchive.BackEnd.Services
     public class ProjectFileService : IProjectFileService
     {
         private readonly IConfiguration _configuration;
+        private readonly ILogger<ProjectFileService> _logger;
 
-        public ProjectFileService(IConfiguration configuration)
+        public ProjectFileService(IConfiguration configuration, ILogger<ProjectFileService> logger)
         {
             _configuration = configuration;
+            _logger = logger;
         }
 
         public async Task<IActionResult> GetPathFiles(string directoryPath)
@@ -42,7 +46,7 @@ namespace EtqanArchive.BackEnd.Services
                     List<string> files = GetDirectoryFiles(directoryPath);
                     directoryFiles = files.Select(path => new FileInfo(path)).Select(fileInfo =>
                     {
-                        var fileExtension = getFileExtensionId(fileExtensions, fileInfo.Extension);
+                        var fileExtension = getFileExtensionId(fileExtensions, fileInfo.Extension.Replace(".",""));
                         var model = new DirecortyPathFilesResponseModel()
                         {
                             FilePath = fileInfo.FullName,
@@ -65,7 +69,11 @@ namespace EtqanArchive.BackEnd.Services
             //get media duration
             try
             {
-
+                var media = new MediaInfoWrapper(fileInfo.FullName, _logger);
+                if (media.Success)
+                {
+                    return media.Duration / 1000;
+                }
             }
             catch (Exception ex)
             {
