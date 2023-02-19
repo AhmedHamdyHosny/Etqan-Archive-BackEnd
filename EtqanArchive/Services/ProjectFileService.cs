@@ -11,6 +11,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediaInfo;
 using Microsoft.Extensions.Logging;
+using Classes.Utilities;
+using System.Net;
 
 namespace EtqanArchive.BackEnd.Services
 {
@@ -39,8 +41,8 @@ namespace EtqanArchive.BackEnd.Services
             IEnumerable<FileExtension> fileExtensions = new FileExtensionModel<FileExtension>().GetData(IsBlock: false, IsDeleted: false, IncludeReferences: "ContentType");
             //copy file to destination
             //for test
-            //using (new NetworkConnection(@"\\" + IP, new NetworkCredential(username, password, System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName)))
-            //{
+            using (new NetworkConnection(@"\\" + IP, new NetworkCredential(username, password, System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName)))
+            {
                 if (Directory.Exists(directoryPath))
                 {
                     List<string> files = GetDirectoryFiles(directoryPath);
@@ -59,7 +61,7 @@ namespace EtqanArchive.BackEnd.Services
                         return model;
                     });
                 }
-            //}
+            }
 
             return await Task.FromResult(new OkObjectResult(new JsonResponse<IEnumerable<DirecortyPathFilesResponseModel>>(directoryFiles)));
         }
