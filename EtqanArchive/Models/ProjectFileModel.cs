@@ -83,7 +83,7 @@ namespace EtqanArchive.BackEnd.Models
         public Guid? CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategoryAltName { get; set; }
-        public DateTime ProductionDate { get; set; }
+        public DateTime? ProductionDate { get; set; }
         public virtual string Note { get; set; }
     }
 
@@ -99,7 +99,7 @@ namespace EtqanArchive.BackEnd.Models
         public string ProjectName { get; set; }
         public string ContentTypeName { get; set; }
         public string CategoryName { get; set; }
-        public DateTime ProductionDate { get; set; }
+        public DateTime? ProductionDate { get; set; }
         public virtual string Note { get; set; }
     }
 
@@ -126,7 +126,7 @@ namespace EtqanArchive.BackEnd.Models
         public string ContentTitle { get; set; }
         public string ContentDescription { get; set; }
         public string KeyWords { get; set; }
-        public DateTime ProductionDate { get; set; }
+        public DateTime? ProductionDate { get; set; }
         public virtual string Note { get; set; }
         public double FileSize { get; set; }
         public int? Duration { get; set; }
@@ -143,11 +143,33 @@ namespace EtqanArchive.BackEnd.Models
         public string ContentTitle { get; set; }
         public string ContentDescription { get; set; }
         public string KeyWords { get; set; }
-        public DateTime ProductionDate { get; set; }
+        public DateTime? ProductionDate { get; set; }
         public CategoryEditBindModel Category { get; set; }
         //public FileExtensionReferenceModel FileExtension { get; set; }
         public virtual string Note { get; set; }
         public double FileSize { get; set; }
+        public string FormattedFileSize
+        {
+            get
+            {
+                if (FileSize < 1)
+                {
+                    //formate in KB
+                    return $"{Math.Ceiling(FileSize * 1024)} KB";
+                }
+                else if (FileSize > 1024)
+                {
+                    //formate in GB
+                    return $"{Math.Ceiling(FileSize / 1024)} GB";
+
+                }
+                else
+                {
+                    //formate in MB
+                    return $"{Math.Ceiling(FileSize)} MB";
+                }
+            }
+        }
         public int? Duration { get; set; }
     }
 
@@ -161,7 +183,7 @@ namespace EtqanArchive.BackEnd.Models
         public string ContentTitle { get; set; }
         public string ContentDescription { get; set; }
         public string KeyWords { get; set; }
-        public DateTime ProductionDate { get; set; }
+        public DateTime? ProductionDate { get; set; }
         public double FileSize { get; set; }
         public int? Duration { get; set; }
     }

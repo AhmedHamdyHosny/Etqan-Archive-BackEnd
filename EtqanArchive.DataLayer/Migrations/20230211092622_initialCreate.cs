@@ -215,7 +215,7 @@ namespace EtqanArchive.DataLayer.Migrations
                     ContentDescription = table.Column<string>(maxLength: 300, nullable: true),
                     ContentAltDescription = table.Column<string>(maxLength: 300, nullable: true),
                     KeyWords = table.Column<string>(maxLength: 500, nullable: true),
-                    ProductionDate = table.Column<DateTime>(nullable: false),
+                    ProductionDate = table.Column<DateTime>(nullable: true),
                     FileSize = table.Column<double>(type: "float", nullable: false),
                     Duration = table.Column<int>(nullable: true)
                 },

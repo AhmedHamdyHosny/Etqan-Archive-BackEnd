@@ -123,7 +123,6 @@ namespace EtqanArchive.BackEnd.Controllers
             return base.FuncPostDetailsView(success, id, ref model, notificationId, ref response);
         }
 
-
         #region Mapper
 
         public override PaginationResult<ProjectGridViewModel> FuncGetGridMapViewModel(PaginationResult<Project> model)
