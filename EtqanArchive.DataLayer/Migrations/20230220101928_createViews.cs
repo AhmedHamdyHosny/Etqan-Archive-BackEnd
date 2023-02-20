@@ -4,6 +4,7 @@ namespace EtqanArchive.DataLayer.Migrations
 {
     public partial class createViews : Migration
     {
+
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             //Create_UserInfoView
@@ -39,5 +40,6 @@ namespace EtqanArchive.DataLayer.Migrations
 
             migrationBuilder.Sql("DROP VIEW [ProjectFileView]");
         }
+
     }
 }

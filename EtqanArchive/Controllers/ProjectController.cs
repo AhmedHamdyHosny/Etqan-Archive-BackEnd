@@ -157,6 +157,10 @@ namespace EtqanArchive.BackEnd.Controllers
 
         #endregion
 
+        public override bool FuncPreDeleteForever(IEnumerable<Guid> id_lst, ref JsonResponse<bool> response)
+        {
+            return base.FuncPreDeleteForever(id_lst, ref response);
+        }
 
     }
 }

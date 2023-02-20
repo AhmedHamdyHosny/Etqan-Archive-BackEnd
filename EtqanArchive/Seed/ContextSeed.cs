@@ -220,6 +220,25 @@ namespace EtqanArchive.BackEnd.Seed
                     CreateDate = DateTime.Now,
                     CreateUserId = adminUserId,
                 },
+
+                new FileExtension()
+                {
+                    FileExtensionId = Guid.Parse("B8B8700B-2DB0-4267-AEF3-05458FA026EE"),
+                    FileExtensionName = "txt",
+                    FileExtensionAltName = "txt",
+                    ContentTypeId = Guid.Parse("1A484414-87E2-4791-82F9-39D3F82AD138"),
+                    CreateDate = DateTime.Now,
+                    CreateUserId = adminUserId,
+                },
+                new FileExtension()
+                {
+                    FileExtensionId = Guid.Parse("6CC68FA6-98F2-4C80-A67F-D050928F6EE0"),
+                    FileExtensionName = "docx",
+                    FileExtensionAltName = "docx",
+                    ContentTypeId = Guid.Parse("1A484414-87E2-4791-82F9-39D3F82AD138"),
+                    CreateDate = DateTime.Now,
+                    CreateUserId = adminUserId,
+                },
             };
             SeedEntities(fileExtensions, context, new FileExtensionComparer());
             #endregion

@@ -5,6 +5,7 @@ namespace Tazkara.DataLayer.ViewBuilder
 {
     internal class EtqanArchiveView : Migration
     {
+
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             //Create_UserInfoView

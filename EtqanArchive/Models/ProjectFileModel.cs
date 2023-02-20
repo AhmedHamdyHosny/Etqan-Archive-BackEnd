@@ -127,7 +127,7 @@ namespace EtqanArchive.BackEnd.Models
         public string ContentDescription { get; set; }
         public string KeyWords { get; set; }
         public DateTime? ProductionDate { get; set; }
-        public virtual string Note { get; set; }
+        public string Note { get; set; }
         public double FileSize { get; set; }
         public int? Duration { get; set; }
     }
@@ -171,6 +171,21 @@ namespace EtqanArchive.BackEnd.Models
             }
         }
         public int? Duration { get; set; }
+        public string FormattedDuration
+        {
+            get
+            {
+                if (Duration != null && Duration > 0)
+                {
+                    TimeSpan t = TimeSpan.FromSeconds((double)Duration);
+                    return string.Format("{0:D2}:{1:D2}:{2:D2}",
+                                    t.Hours,
+                                    t.Minutes,
+                                    t.Seconds);
+                }
+                return null;
+            }
+        }
     }
 
     public class ProjectFileEditRequestModel : IProjectFile
@@ -186,6 +201,7 @@ namespace EtqanArchive.BackEnd.Models
         public DateTime? ProductionDate { get; set; }
         public double FileSize { get; set; }
         public int? Duration { get; set; }
+        public string Note { get; set; }
     }
 
     public class ProjectFile_Create_Edit_Model

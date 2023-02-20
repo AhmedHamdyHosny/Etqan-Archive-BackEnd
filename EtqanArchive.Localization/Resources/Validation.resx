@@ -150,6 +150,9 @@
   <data name="DateTimeMustBeAfterNow" xml:space="preserve">
     <value>Datetime must be after now</value>
   </data>
+  <data name="DirectoryNotFound" xml:space="preserve">
+    <value>لم يتم ايجاد الملف</value>
+  </data>
   <data name="EmailRequired" xml:space="preserve">
     <value>Email is required</value>
   </data>

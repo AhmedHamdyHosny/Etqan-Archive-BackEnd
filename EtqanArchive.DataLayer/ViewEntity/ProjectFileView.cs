@@ -27,7 +27,7 @@ namespace EtqanArchive.DataLayer.ViewEntity
         public Guid FileExtensionId { get; set; }
         public string FileExtensionName { get; set; }
         public string FileExtensionAltName { get; set; }
-        public DateTime ProductionDate { get; set; }
+        public DateTime? ProductionDate { get; set; }
 
     }
 }

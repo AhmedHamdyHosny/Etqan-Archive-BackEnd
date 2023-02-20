@@ -48,7 +48,7 @@ namespace EtqanArchive.BackEnd.Services
                     List<string> files = GetDirectoryFiles(directoryPath);
                     directoryFiles = files.Select(path => new FileInfo(path)).Select(fileInfo =>
                     {
-                        var fileExtension = getFileExtensionId(fileExtensions, fileInfo.Extension.Replace(".",""));
+                        var fileExtension = getFileExtensionId(fileExtensions, fileInfo.Extension.Replace(".", ""));
                         var model = new DirecortyPathFilesResponseModel()
                         {
                             FilePath = fileInfo.FullName,
@@ -60,10 +60,13 @@ namespace EtqanArchive.BackEnd.Services
                         };
                         return model;
                     });
+                    return await Task.FromResult(new OkObjectResult(new JsonResponse<IEnumerable<DirecortyPathFilesResponseModel>>(directoryFiles)));
+                }
+                else
+                {
+                    return await Task.FromResult(new OkObjectResult(new JsonResponse<IEnumerable<DirecortyPathFilesResponseModel>>(null, Localization.Resources.Validation.DirectoryNotFound, false)));
                 }
             }
-
-            return await Task.FromResult(new OkObjectResult(new JsonResponse<IEnumerable<DirecortyPathFilesResponseModel>>(directoryFiles)));
         }
 
         private int? getMediaDuration(FileInfo fileInfo)
