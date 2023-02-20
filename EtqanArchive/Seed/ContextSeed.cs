@@ -250,58 +250,58 @@ namespace EtqanArchive.BackEnd.Seed
         private static async Task SeedTestingDataAsync(UserManager<User> userManager, EtqanArchiveDBContext context, Guid adminUserId, IConfiguration configuration)
         {
 
-            #region Project
-            List<Project> projects = new List<Project>()
-            {
-                new Project()
-                {
-                    ProjectId = Guid.Parse("4A65A56D-9BFD-4069-A95E-A68C42B6248C"),
-                    ProjectName = "درب الحرمين",
-                    ProjectAltName = "درب الحرمين",
-                    ProjectLocation = "مكة المكرمة , السعودية",
-                    ProjectAltLocation = "مكة المكرمة , السعودية",
-                    CreateUserId = adminUserId,
-                    CreateDate = DateTime.Now,
-                },
-                new Project()
-                {
-                    ProjectId = Guid.Parse("26B424F2-957B-41F4-95CD-D45D4E266FD2"),
-                    ProjectName = "فندق الساعة",
-                    ProjectAltName = "فندق الساعة",
-                    ProjectLocation = "مكة المكرمة , السعودية",
-                    ProjectAltLocation = "مكة المكرمة , السعودية",
-                    CreateUserId = adminUserId,
-                    CreateDate = DateTime.Now,
-                },
-            };
-            SeedEntities(projects, context, new ProjectComparer());
-            #endregion
+            //#region Project
+            //List<Project> projects = new List<Project>()
+            //{
+            //    new Project()
+            //    {
+            //        ProjectId = Guid.Parse("4A65A56D-9BFD-4069-A95E-A68C42B6248C"),
+            //        ProjectName = "درب الحرمين",
+            //        ProjectAltName = "درب الحرمين",
+            //        ProjectLocation = "مكة المكرمة , السعودية",
+            //        ProjectAltLocation = "مكة المكرمة , السعودية",
+            //        CreateUserId = adminUserId,
+            //        CreateDate = DateTime.Now,
+            //    },
+            //    new Project()
+            //    {
+            //        ProjectId = Guid.Parse("26B424F2-957B-41F4-95CD-D45D4E266FD2"),
+            //        ProjectName = "فندق الساعة",
+            //        ProjectAltName = "فندق الساعة",
+            //        ProjectLocation = "مكة المكرمة , السعودية",
+            //        ProjectAltLocation = "مكة المكرمة , السعودية",
+            //        CreateUserId = adminUserId,
+            //        CreateDate = DateTime.Now,
+            //    },
+            //};
+            //SeedEntities(projects, context, new ProjectComparer());
+            //#endregion
 
-            #region ProjectFile
-            List<ProjectFile> projectFiles = new List<ProjectFile>()
-            {
-                new ProjectFile()
-                {
-                    ProjectFileId = Guid.Parse("0E8C94A2-A492-43EA-AFDD-B7F0B2A4CF0B"),
-                    ProjectId = Guid.Parse("26B424F2-957B-41F4-95CD-D45D4E266FD2"),
-                    CategoryId = Guid.Parse("68E419B7-0D9B-4D93-989C-609F9A17C428"),
-                    //ContentTypeId = Guid.Parse("EE8A314F-2DBF-4567-BD81-7A60202AADF4"),
-                    FileExtensionId = Guid.Parse("9DDA90F2-E7A2-4B7D-AC90-DD2273B39402"),
-                    ContentTitle = "منظر داخلى كامل لفندق الساعة",
-                    ContentAltTitle = "منظر داخلى كامل لفندق الساعة",
-                    ContentDescription = "تفاصيل منظر داخلى كامل لفندق الساعة",
-                    ContentAltDescription  = "تفاصيل منظر داخلى كامل لفندق الساعة",
-                    KeyWords = "png,image,picture",
-                    FileName = "1.png",
-                    FilePath = "C:\\Users\\Ahmed Shams\\Pictures\\Screenshots\\1.png",
-                    Note = "ملاحظات",
-                    ProductionDate = DateTime.Now,
-                    CreateUserId = adminUserId,
-                    CreateDate = DateTime.Now,
-                },
-            };
-            SeedEntities(projectFiles, context, new ProjectFileComparer());
-            #endregion
+            //#region ProjectFile
+            //List<ProjectFile> projectFiles = new List<ProjectFile>()
+            //{
+            //    new ProjectFile()
+            //    {
+            //        ProjectFileId = Guid.Parse("0E8C94A2-A492-43EA-AFDD-B7F0B2A4CF0B"),
+            //        ProjectId = Guid.Parse("26B424F2-957B-41F4-95CD-D45D4E266FD2"),
+            //        CategoryId = Guid.Parse("68E419B7-0D9B-4D93-989C-609F9A17C428"),
+            //        //ContentTypeId = Guid.Parse("EE8A314F-2DBF-4567-BD81-7A60202AADF4"),
+            //        FileExtensionId = Guid.Parse("9DDA90F2-E7A2-4B7D-AC90-DD2273B39402"),
+            //        ContentTitle = "منظر داخلى كامل لفندق الساعة",
+            //        ContentAltTitle = "منظر داخلى كامل لفندق الساعة",
+            //        ContentDescription = "تفاصيل منظر داخلى كامل لفندق الساعة",
+            //        ContentAltDescription  = "تفاصيل منظر داخلى كامل لفندق الساعة",
+            //        KeyWords = "png,image,picture",
+            //        FileName = "1.png",
+            //        FilePath = "C:\\Users\\Ahmed Shams\\Pictures\\Screenshots\\1.png",
+            //        Note = "ملاحظات",
+            //        ProductionDate = DateTime.Now,
+            //        CreateUserId = adminUserId,
+            //        CreateDate = DateTime.Now,
+            //    },
+            //};
+            //SeedEntities(projectFiles, context, new ProjectFileComparer());
+            //#endregion
 
             await Task.FromResult(0);
         }
