@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EtqanArchive.DataLayer.Migrations
 {
     [DbContext(typeof(EtqanArchiveDBContext))]
-    [Migration("20230211092707_createViews")]
-    partial class createViews
+    [Migration("20230220101912_initialCreate")]
+    partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -530,7 +530,7 @@ namespace EtqanArchive.DataLayer.Migrations
                         .HasColumnType("nvarchar(200)")
                         .HasMaxLength(200);
 
-                    b.Property<DateTime>("ProductionDate")
+                    b.Property<DateTime?>("ProductionDate")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("ProjectId")
@@ -552,7 +552,7 @@ namespace EtqanArchive.DataLayer.Migrations
                     b.HasOne("DataLayer.Security.TableEntity.Role", "Role")
                         .WithMany("RoleClaims")
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -561,7 +561,7 @@ namespace EtqanArchive.DataLayer.Migrations
                     b.HasOne("DataLayer.Security.TableEntity.UserType", "UserType")
                         .WithMany("Users")
                         .HasForeignKey("UserTypeId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -570,7 +570,7 @@ namespace EtqanArchive.DataLayer.Migrations
                     b.HasOne("DataLayer.Security.TableEntity.User", "User")
                         .WithMany("UserClaims")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -579,7 +579,7 @@ namespace EtqanArchive.DataLayer.Migrations
                     b.HasOne("DataLayer.Security.TableEntity.User", "User")
                         .WithMany("UserLogins")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -588,13 +588,13 @@ namespace EtqanArchive.DataLayer.Migrations
                     b.HasOne("DataLayer.Security.TableEntity.Role", "Role")
                         .WithMany("UserRoles")
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DataLayer.Security.TableEntity.User", "User")
                         .WithMany("UserRoles")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -603,7 +603,7 @@ namespace EtqanArchive.DataLayer.Migrations
                     b.HasOne("DataLayer.Security.TableEntity.User", "User")
                         .WithMany("UserTokens")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -612,7 +612,7 @@ namespace EtqanArchive.DataLayer.Migrations
                     b.HasOne("EtqanArchive.DataLayer.TableEntity.ContentType", "ContentType")
                         .WithMany("FileExtensions")
                         .HasForeignKey("ContentTypeId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -621,18 +621,18 @@ namespace EtqanArchive.DataLayer.Migrations
                     b.HasOne("EtqanArchive.DataLayer.TableEntity.Category", "Category")
                         .WithMany("ProjectFiles")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("EtqanArchive.DataLayer.TableEntity.FileExtension", "FileExtension")
                         .WithMany("ProjectFiles")
                         .HasForeignKey("FileExtensionId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EtqanArchive.DataLayer.TableEntity.Project", "Project")
                         .WithMany("ProjectFiles")
                         .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

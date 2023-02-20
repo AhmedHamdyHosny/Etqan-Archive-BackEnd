@@ -77,13 +77,25 @@ namespace EtqanArchive.Localization.Resources {
                 return ResourceManager.GetString("BookTicketTransactionNotFound", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Calculated balance not match with available balance.
         /// </summary>
-        public static string CalculatedBalanceNotMatchWithAvailableBalance {
-            get {
+        public static string CalculatedBalanceNotMatchWithAvailableBalance
+        {
+            get
+            {
                 return ResourceManager.GetString("CalculatedBalanceNotMatchWithAvailableBalance", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to لم يتم ايجاد الملف .
+        /// </summary>
+        public static string DirectoryNotFound
+        {
+            get {
+                return ResourceManager.GetString("DirectoryNotFound", resourceCulture);
             }
         }
         

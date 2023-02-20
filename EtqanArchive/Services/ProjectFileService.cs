@@ -58,10 +58,14 @@ namespace EtqanArchive.BackEnd.Services
                         };
                         return model;
                     });
-                }
+                return await Task.FromResult(new OkObjectResult(new JsonResponse<IEnumerable<DirecortyPathFilesResponseModel>>(directoryFiles)));
+            }
+            else
+            {
+                return await Task.FromResult(new OkObjectResult(new JsonResponse<IEnumerable<DirecortyPathFilesResponseModel>>(null, Localization.Resources.Validation.DirectoryNotFound, false)));
+            }
             //}
 
-            return await Task.FromResult(new OkObjectResult(new JsonResponse<IEnumerable<DirecortyPathFilesResponseModel>>(directoryFiles)));
         }
 
         private int? getMediaDuration(FileInfo fileInfo)

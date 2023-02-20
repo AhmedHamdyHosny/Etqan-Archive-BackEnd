@@ -24,22 +24,22 @@ namespace EtqanArchive.DataLayer
 
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //        IConfigurationRoot configuration = new ConfigurationBuilder()
-        //           .SetBasePath(Directory.GetCurrentDirectory())
-        //           .AddJsonFile("appsettings.json")
-        //           .Build();
-        //        var connectionString = configuration.GetConnectionString("DefaultConnection");
-        //        optionsBuilder.UseSqlServer(connectionString);
-        //    }
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+                   .SetBasePath(Directory.GetCurrentDirectory())
+                   .AddJsonFile("appsettings.json")
+                   .Build();
+                var connectionString = configuration.GetConnectionString("DefaultConnection");
+                optionsBuilder.UseSqlServer(connectionString);
+            }
+        }
 
-        //for test
-        protected override void OnConfiguring(DbContextOptionsBuilder options) =>
-        options.UseSqlServer(@"Server=.;Database=EtqanArchive;User Id=sa;Password=Sh@ms2018;");
+        //for test  
+        //protected override void OnConfiguring(DbContextOptionsBuilder options) =>
+        //options.UseSqlServer(@"Server=.;Database=EtqanArchive;User Id=sa;Password=Sh@ms2018;");
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -47,7 +47,7 @@ namespace EtqanArchive.DataLayer
             SetEntityIndex(ref modelBuilder);
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {
-                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+                relationship.DeleteBehavior = DeleteBehavior.Cascade;
             }
 
             base.OnModelCreating(modelBuilder);
