@@ -95,7 +95,6 @@ namespace EtqanArchive.BackEnd.Controllers
                         //map updated properties values
                         projectFile = _mapper.Map(item, projectFile);
                         projectFile.Project = null;
-                        //eventTicketClass = _mapper.Map<EventTicketClass>(item);
                         //check item if modified from latest time
                         if (Repository<ProjectFile>.IsChanged(
                             projectFile, originFileExtension, projectModel.dbContext, GenericRepositoryCoreConstant.UpdateReference_ExcludedProperties))

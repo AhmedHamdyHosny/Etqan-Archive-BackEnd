@@ -61,21 +61,20 @@ namespace EtqanArchive.BackEnd.Controllers
         {
             IsEdit_WithReference = true;
             EntityReferences = "FileExtensions";
-
             bool success = base.FuncPreEdit(id, ref model, ref entity, ref response);
             if (success)
             {
-                Guid userId = Guid.Parse(User.Identity.GetUserId());
-                var contentTypeModel = new ContentTypeModel<ContentType>();
-                ContentType oldEntity = contentTypeModel.GetData(ContentTypeId: id, IncludeReferences: EntityReferences).SingleOrDefault();
                 if (model.FileExtensions != null && model.FileExtensions.Any())
                 {
+                    Guid userId = Guid.Parse(User.Identity.GetUserId());
+                    ContentTypeModel<ContentType> contentTypeModel = new ContentTypeModel<ContentType>();
+                    ContentType oldEntity = contentTypeModel.GetData(ContentTypeId: entity.ContentTypeId, IncludeReferences: EntityReferences).SingleOrDefault();
                     List<FileExtension> fileExtensions = new List<FileExtension>();
                     //set create user, create date for new items
                     foreach (var item in model.FileExtensions.Where(x => x.FileExtensionId == Guid.Empty || x.FileExtensionId == null))
                     {
                         FileExtension fileExtension = _mapper.Map<FileExtension>(item);
-                        //fileExtension.FileExtensionId = Guid.NewGuid();
+                        fileExtension.FileExtensionId = Guid.NewGuid();
                         fileExtension.ContentTypeId = id;
                         fileExtension.CreateDate = DateTime.Now;
                         fileExtension.CreateUserId = userId;
@@ -94,7 +93,6 @@ namespace EtqanArchive.BackEnd.Controllers
                         //map updated properties values
                         fileExtension = _mapper.Map(item, fileExtension);
                         fileExtension.ContentType = null;
-                        //eventTicketClass = _mapper.Map<EventTicketClass>(item);
                         //check item if modified from latest time
                         if (Repository<FileExtension>.IsChanged(
                             fileExtension, originFileExtension, contentTypeModel.dbContext, GenericRepositoryCoreConstant.UpdateReference_ExcludedProperties))

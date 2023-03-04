@@ -31,7 +31,6 @@ namespace EtqanArchive.BackEnd.Seed
 
         private static async Task SeedSecurityAsync(UserManager<User> userManager, EtqanArchiveDBContext context, Guid adminUserId)
         {
-
             #region User Type
             List<UserType> userTypes = new List<UserType>()
             {
@@ -65,7 +64,7 @@ namespace EtqanArchive.BackEnd.Seed
             };
 
             //SeedEntities(roles, context, new RoleComparer(), addItems: false, deleteItems: false, updateItems: false);
-            SeedEntities(roles, context, new RoleComparer(), addItems: true,  deleteItems: false, updateItems: false);
+            SeedEntities(roles, context, new RoleComparer(), addItems: true, deleteItems: false, updateItems: false);
             #endregion
 
             #region AdminUser
