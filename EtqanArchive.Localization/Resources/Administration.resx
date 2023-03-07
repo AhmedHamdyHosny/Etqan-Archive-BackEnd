@@ -144,6 +144,9 @@
   <data name="ChangedStatusSuccessfully" xml:space="preserve">
     <value>Changed  status successfully</value>
   </data>
+  <data name="ContentTypeNotFound" xml:space="preserve">
+    <value>Content type not found</value>
+  </data>
   <data name="CouldNotUpdatePortfolio" xml:space="preserve">
     <value>Couldn't update portfolio</value>
   </data>

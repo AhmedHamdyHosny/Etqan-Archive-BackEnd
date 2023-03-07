@@ -103,6 +103,14 @@ namespace EtqanArchive.BackEnd.Models
         public virtual IEnumerable<FileExtensionEditBindModel> FileExtensions { get; set; }
     }
 
+    public class ContentTypeEditRequestModel : IContentType
+    {
+        public string ContentTypeName { get; set; }
+        public string ContentTypeAltName { get; set; }
+
+        public virtual IEnumerable<FileExtensionEditBindModel> FileExtensions { get; set; }
+    }
+
     public class ContentType_Create_Edit_Model
     {
         public ModelReference References { get; set; }

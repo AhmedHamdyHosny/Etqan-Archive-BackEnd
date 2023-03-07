@@ -11,6 +11,7 @@ namespace EtqanArchive.BackEnd.Mapper
             CreateMap<ContentTypeCreateBindModel, ContentType>();
             CreateMap<ContentTypeEditBindModel, ContentType>();
             CreateMap<ContentType, ContentTypeEditBindModel>();
+            CreateMap<ContentTypeEditRequestModel, ContentType>();
             CreateMap<ContentType, ContentTypeViewModel>();
             CreateMap<ContentType, ContentTypeDetailsViewModel>();
             CreateMap<ContentType, ContentTypeGridViewModel>();

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EtqanArchive.BackEnd.Models;
+using EtqanArchive.BackEnd.Services;
 using EtqanArchive.DataLayer.TableEntity;
 using EtqanArchive.Identity;
 using GenericBackEndCore.Classes.Utilities;
@@ -15,14 +16,16 @@ namespace EtqanArchive.BackEnd.Controllers
     [ApiController]
     public class ContentTypeController : BaseApiController<ContentType, ContentType, ContentTypeGridViewModel, ContentTypeDetailsViewModel,
         ContentTypeCreateModel, ContentTypeCreateBindModel, ContentTypeCreateBindModel, bool?, bool?, ContentTypeEditModel,
-        ContentTypeEditBindModel, ContentTypeEditBindModel, bool?, ContentType,
+        ContentTypeEditBindModel, ContentTypeEditRequestModel, bool?, ContentType,
         ContentTypeModel<ContentType>, ContentTypeModel<ContentType>>
     {
         private readonly IMapper _mapper;
+        private readonly IContentTypeService _contentTypeService;
 
-        public ContentTypeController(IMapper mapper)
+        public ContentTypeController(IMapper mapper, IContentTypeService contentTypeService)
         {
             _mapper = mapper;
+            _contentTypeService = contentTypeService;
         }
 
         public override bool FuncPreGetGridView(ref GenericDataFormat options, ref JsonResponse<PaginationResult<ContentTypeGridViewModel>> response)
@@ -57,59 +60,73 @@ namespace EtqanArchive.BackEnd.Controllers
             return base.FuncPostInitEditView(id, ref model, notificationId, taskId, ref response);
         }
 
-        public override bool FuncPreEdit(Guid id, ref ContentTypeEditBindModel model, ref ContentType entity, ref JsonResponse<bool?> response)
+        public override bool FuncPreEdit(Guid id, ref ContentTypeEditRequestModel model, ref ContentType entity, ref JsonResponse<bool?> response)
         {
             IsEdit_WithReference = true;
             EntityReferences = "FileExtensions";
             bool success = base.FuncPreEdit(id, ref model, ref entity, ref response);
             if (success)
             {
-                if (model.FileExtensions != null && model.FileExtensions.Any())
-                {
-                    Guid userId = Guid.Parse(User.Identity.GetUserId());
-                    ContentTypeModel<ContentType> contentTypeModel = new ContentTypeModel<ContentType>();
-                    ContentType oldEntity = contentTypeModel.GetData(ContentTypeId: entity.ContentTypeId, IncludeReferences: EntityReferences).SingleOrDefault();
-                    List<FileExtension> fileExtensions = new List<FileExtension>();
-                    //set create user, create date for new items
-                    foreach (var item in model.FileExtensions.Where(x => x.FileExtensionId == Guid.Empty || x.FileExtensionId == null))
-                    {
-                        FileExtension fileExtension = _mapper.Map<FileExtension>(item);
-                        fileExtension.FileExtensionId = Guid.NewGuid();
-                        fileExtension.ContentTypeId = id;
-                        fileExtension.CreateDate = DateTime.Now;
-                        fileExtension.CreateUserId = userId;
-                        fileExtensions.Add(fileExtension);
-                    }
-
-                    //loop over items that exist in old model items (search by id)
-                    foreach (var item in model.FileExtensions.Where(x => oldEntity.FileExtensions.Any(y =>
-                    y.FileExtensionId.ToString() == x.FileExtensionId.ToString())))
-                    {
-                        //get old item
-                        var fileExtension = oldEntity.FileExtensions.SingleOrDefault(x =>
-                        x.FileExtensionId.ToString() == item.FileExtensionId.ToString());
-                        var originFileExtension = oldEntity.FileExtensions.SingleOrDefault(x =>
-                        x.FileExtensionId.ToString() == item.FileExtensionId.ToString());
-                        //map updated properties values
-                        fileExtension = _mapper.Map(item, fileExtension);
-                        fileExtension.ContentType = null;
-                        //check item if modified from latest time
-                        if (Repository<FileExtension>.IsChanged(
-                            fileExtension, originFileExtension, contentTypeModel.dbContext, GenericRepositoryCoreConstant.UpdateReference_ExcludedProperties))
-                        {
-                            //set modify user, modify date for updated items
-                            fileExtension.ModifyDate = DateTime.Now;
-                            fileExtension.ModifyUserId = userId;
-                        }
-                        fileExtensions.Add(fileExtension);
-                    }
-                    entity.FileExtensions = fileExtensions;
-                }
+                success = _contentTypeService.PreEdit(id, Guid.Parse(User.Identity.GetUserId()), model, ref entity, ref response);
             }
             return success;
+
+            //IsEdit_WithReference = true;
+            //EntityReferences = "FileExtensions";
+            //bool success = base.FuncPreEdit(id, ref model, ref entity, ref response);
+            //if (success)
+            //{
+            //    ContentTypeModel<ContentType> contentTypeModel = new ContentTypeModel<ContentType>();
+            //    if (model.FileExtensions != null && model.FileExtensions.Any())
+            //    {
+            //        Guid userId = Guid.Parse(User.Identity.GetUserId());
+            //        ContentType oldEntity = contentTypeModel.GetData(ContentTypeId: entity.ContentTypeId, IncludeReferences: EntityReferences).SingleOrDefault();
+            //        List<FileExtension> fileExtensions = new List<FileExtension>();
+            //        //set create user, create date for new items
+            //        foreach (var item in model.FileExtensions.Where(x => x.FileExtensionId == Guid.Empty || x.FileExtensionId == null))
+            //        {
+            //            FileExtension fileExtension = _mapper.Map<FileExtension>(item);
+            //            fileExtension.FileExtensionId = Guid.NewGuid();
+            //            fileExtension.ContentTypeId = id;
+            //            fileExtension.CreateDate = DateTime.Now;
+            //            fileExtension.CreateUserId = userId;
+            //            fileExtensions.Add(fileExtension);
+            //        }
+
+            //        //loop over items that exist in old model items (search by id)
+            //        foreach (var item in model.FileExtensions.Where(x => oldEntity.FileExtensions.Any(y =>
+            //        y.FileExtensionId.ToString() == x.FileExtensionId.ToString())))
+            //        {
+            //            //get old item
+            //            FileExtension fileExtension = CoreUtility.CopyEntity(oldEntity.FileExtensions.SingleOrDefault(x => x.FileExtensionId.ToString() == item.FileExtensionId.ToString()));
+            //            fileExtension.FileExtensionName = "ttttttttttttt";
+            //            var originFileExtension = oldEntity.FileExtensions.SingleOrDefault(x =>
+            //            x.FileExtensionId.ToString() == item.FileExtensionId.ToString());
+            //            //map updated properties values
+            //            fileExtension = _mapper.Map(item, fileExtension);
+            //            fileExtension.ContentType = null;
+            //            //check item if modified from latest time
+            //            if (Repository<FileExtension>.IsChanged(
+            //                fileExtension, originFileExtension, contentTypeModel.dbContext, GenericRepositoryCoreConstant.UpdateReference_ExcludedProperties))
+            //            {
+            //                //set modify user, modify date for updated items
+            //                fileExtension.ModifyDate = DateTime.Now;
+            //                fileExtension.ModifyUserId = userId;
+            //            }
+            //            fileExtensions.Add(fileExtension);
+            //        }
+            //        entity.FileExtensions = fileExtensions;
+
+            //    }
+            //    contentTypeModel.dbContext.Dispose();
+            //}
+            //return success;
         }
 
-
+        public override ContentType FuncEdit(Guid id, ContentType entity, ref JsonResponse<bool?> response)
+        {
+            return _contentTypeService.Edit(entity);
+        }
         public override IActionResult FuncPostDetailsView(bool success, Guid id, ref ContentTypeDetailsViewModel model, Guid? notificationId, ref JsonResponse<ContentTypeDetailsViewModel> response)
         {
             if (success)
@@ -142,7 +159,7 @@ namespace EtqanArchive.BackEnd.Controllers
         {
             return _mapper.Map<ContentType>(model);
         }
-        public override ContentType FuncPreEditMapModel(Guid id, ContentTypeEditBindModel model, ContentType entity)
+        public override ContentType FuncPreEditMapModel(Guid id, ContentTypeEditRequestModel model, ContentType entity)
         {
             entity = _mapper.Map(model, entity);
             return entity;

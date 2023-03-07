@@ -41,6 +41,7 @@ namespace EtqanArchive
             services
                 .AddDBContext(Configuration)
                 .AddTransient<IProjectFileService, ProjectFileService>()
+                .AddTransient<IContentTypeService, ContentTypeService>()
                 .AddSecurityServices();
 
             //services.AddScoped<IUserService, UserService>();
