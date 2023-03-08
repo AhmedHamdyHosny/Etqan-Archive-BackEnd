@@ -40,6 +40,7 @@ namespace EtqanArchive
             #region Add Services
             services
                 .AddDBContext(Configuration)
+                .AddTransient<IProjectService, ProjectService>()
                 .AddTransient<IProjectFileService, ProjectFileService>()
                 .AddTransient<IContentTypeService, ContentTypeService>()
                 .AddSecurityServices();

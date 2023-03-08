@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EtqanArchive.BackEnd.Models;
+using EtqanArchive.BackEnd.Services;
 using EtqanArchive.DataLayer.TableEntity;
 using EtqanArchive.Identity;
 using GenericBackEndCore.Classes.Utilities;
@@ -19,10 +20,12 @@ namespace EtqanArchive.BackEnd.Controllers
         ProjectModel<Project>, ProjectModel<Project>>
     {
         private readonly IMapper _mapper;
+        private readonly IProjectService _projectService;
 
-        public ProjectController(IMapper mapper)
+        public ProjectController(IMapper mapper, IProjectService projectService)
         {
             _mapper = mapper;
+            _projectService = projectService;
         }
 
         public override bool FuncPreGetGridView(ref GenericDataFormat options, ref JsonResponse<PaginationResult<ProjectGridViewModel>> response)
@@ -62,53 +65,67 @@ namespace EtqanArchive.BackEnd.Controllers
         {
             IsEdit_WithReference = true;
             EntityReferences = "ProjectFiles";
-
             bool success = base.FuncPreEdit(id, ref model, ref entity, ref response);
             if (success)
             {
-                Guid userId = Guid.Parse(User.Identity.GetUserId());
-                var projectModel = new ProjectModel<Project>();
-                Project oldEntity = projectModel.GetData(ProjectId: id, IncludeReferences: EntityReferences).SingleOrDefault();
-                if (model.ProjectFiles != null && model.ProjectFiles.Any())
-                {
-                    List<ProjectFile> projectFiles = new List<ProjectFile>();
-                    //set create user, create date for new items
-                    foreach (var item in model.ProjectFiles.Where(x => x.ProjectFileId == Guid.Empty))
-                    {
-                        ProjectFile projectFile = _mapper.Map<ProjectFile>(item);
-                        //projectFile.ProjectFileId = Guid.NewGuid();
-                        projectFile.ProjectId = id;
-                        projectFile.CreateDate = DateTime.Now;
-                        projectFile.CreateUserId = userId;
-                        projectFiles.Add(projectFile);
-                    }
-
-                    //loop over items that exist in old model items (search by id)
-                    foreach (var item in model.ProjectFiles.Where(x => oldEntity.ProjectFiles.Any(y =>
-                    y.ProjectFileId.ToString() == x.ProjectFileId.ToString())))
-                    {
-                        //get old item
-                        var projectFile = oldEntity.ProjectFiles.SingleOrDefault(x =>
-                        x.ProjectFileId.ToString() == item.ProjectFileId.ToString());
-                        var originFileExtension = oldEntity.ProjectFiles.SingleOrDefault(x =>
-                        x.ProjectFileId.ToString() == item.ProjectFileId.ToString());
-                        //map updated properties values
-                        projectFile = _mapper.Map(item, projectFile);
-                        projectFile.Project = null;
-                        //check item if modified from latest time
-                        if (Repository<ProjectFile>.IsChanged(
-                            projectFile, originFileExtension, projectModel.dbContext, GenericRepositoryCoreConstant.UpdateReference_ExcludedProperties))
-                        {
-                            //set modify user, modify date for updated items
-                            projectFile.ModifyDate = DateTime.Now;
-                            projectFile.ModifyUserId = userId;
-                        }
-                        projectFiles.Add(projectFile);
-                    }
-                    entity.ProjectFiles = projectFiles;
-                }
+                success = _projectService.PreEdit(id, Guid.Parse(User.Identity.GetUserId()), model, ref entity, ref response);
             }
             return success;
+
+            //IsEdit_WithReference = true;
+            //EntityReferences = "ProjectFiles";
+
+            //bool success = base.FuncPreEdit(id, ref model, ref entity, ref response);
+            //if (success)
+            //{
+            //    Guid userId = Guid.Parse(User.Identity.GetUserId());
+            //    var projectModel = new ProjectModel<Project>();
+            //    Project oldEntity = projectModel.GetData(ProjectId: id, IncludeReferences: EntityReferences).SingleOrDefault();
+            //    if (model.ProjectFiles != null && model.ProjectFiles.Any())
+            //    {
+            //        List<ProjectFile> projectFiles = new List<ProjectFile>();
+            //        //set create user, create date for new items
+            //        foreach (var item in model.ProjectFiles.Where(x => x.ProjectFileId == Guid.Empty))
+            //        {
+            //            ProjectFile projectFile = _mapper.Map<ProjectFile>(item);
+            //            //projectFile.ProjectFileId = Guid.NewGuid();
+            //            projectFile.ProjectId = id;
+            //            projectFile.CreateDate = DateTime.Now;
+            //            projectFile.CreateUserId = userId;
+            //            projectFiles.Add(projectFile);
+            //        }
+
+            //        //loop over items that exist in old model items (search by id)
+            //        foreach (var item in model.ProjectFiles.Where(x => oldEntity.ProjectFiles.Any(y =>
+            //        y.ProjectFileId.ToString() == x.ProjectFileId.ToString())))
+            //        {
+            //            //get old item
+            //            var projectFile = oldEntity.ProjectFiles.SingleOrDefault(x =>
+            //            x.ProjectFileId.ToString() == item.ProjectFileId.ToString());
+            //            var originFileExtension = oldEntity.ProjectFiles.SingleOrDefault(x =>
+            //            x.ProjectFileId.ToString() == item.ProjectFileId.ToString());
+            //            //map updated properties values
+            //            projectFile = _mapper.Map(item, projectFile);
+            //            projectFile.Project = null;
+            //            //check item if modified from latest time
+            //            if (Repository<ProjectFile>.IsChanged(
+            //                projectFile, originFileExtension, projectModel.dbContext, GenericRepositoryCoreConstant.UpdateReference_ExcludedProperties))
+            //            {
+            //                //set modify user, modify date for updated items
+            //                projectFile.ModifyDate = DateTime.Now;
+            //                projectFile.ModifyUserId = userId;
+            //            }
+            //            projectFiles.Add(projectFile);
+            //        }
+            //        entity.ProjectFiles = projectFiles;
+            //    }
+            //}
+            //return success;
+        }
+
+        public override Project FuncEdit(Guid id, Project entity, ref JsonResponse<bool?> response)
+        {
+            return _projectService.Edit(entity);
         }
 
         public override IActionResult FuncPostDetailsView(bool success, Guid id, ref ProjectDetailsViewModel model, Guid? notificationId, ref JsonResponse<ProjectDetailsViewModel> response)
